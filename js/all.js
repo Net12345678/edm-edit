@@ -1,0 +1,33 @@
+var EDMLayout = new Vue({
+    data:{
+        layoutA:{
+            logo:{
+                imgsrc:'',
+                linkhref:''
+            },
+            banner:{
+                imgsrc:'',
+                linkhref:''
+            },
+            product:[],
+            footer:{
+                fb:{
+                    imgsrc:'',
+                    linkhref:''
+                },
+                ig:{
+                    imgsrc:'',
+                    linkhref:''
+                },
+                line:{
+                    imgsrc:'',
+                    linkhref:''
+                },
+                content:{
+                    imgsrc:''
+                }
+            }
+        }
+    }
+});
+
