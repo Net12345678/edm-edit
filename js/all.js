@@ -2,14 +2,19 @@ var EDMLayout = new Vue({
     data:{
         layoutA:{
             logo:{
-                imgsrc:'',
+                imgsrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
                 linkhref:''
             },
             banner:{
                 imgsrc:'',
-                linkhref:''
+                linkhref:'',
+                alt:''
             },
-            product:[],
+            product:[{
+                imgsrc:'',
+                linkhref:'',
+                alt:''
+            }],
             footer:{
                 fb:{
                     imgsrc:'',
