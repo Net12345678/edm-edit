@@ -4,21 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="source/css/all.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="source/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container-fluid vh-100">
-    <div class="row">
-      <div class="col-4 h-100">
-        <div class="border-right border-secondary"></div>
+    <div class="row h-100">
+      <!-- 表單 -->
+      <div class="l-aside_form col-4 border-right border-secondary h-100 pt-3 overflow-auto">
+        <!-- 選版型 -->
+        <div class="input-group">
+          <select class="custom-select" id="chooseEdmTemplate" aria-label="choose EDM Template">
+            <option selected="">請選擇版型...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">送出</button>
+          </div>
+        </div>
+        <hr>
+        <!-- input -->
+        <form>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
+            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
+          </div>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
+            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
+          </div>
+        </form>
+        <form>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
+            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
+          </div>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
+            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
+          </div>
+        </form>
+        <form>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
+            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
+          </div>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
+            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
+          </div>
+        </form>
+        <form>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
+            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
+          </div>
+          <div class="form-group">
+            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
+            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
+          </div>
+          <!-- 輸出 html 按鈕 -->
+          <div class="text-right mb-3">
+            <button type="button" class="btn btn-dark">製作</button>
+          </div>
+        </form>
+        
       </div>
+      <!-- 預覽 -->
       <div class="col-8">
+        <div class="preview" id="preview">
+          <!-- html 要輸出的部分 -->
 
+        </div>
       </div>
     </div>  
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/all.js"></script>
-</body>
+</body> 
 </html>
