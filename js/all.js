@@ -1,0 +1,38 @@
+var EDMLayout = new Vue({
+    data:{
+        layoutA:{
+            logo:{
+                imgsrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
+                linkhref:''
+            },
+            banner:{
+                imgsrc:'',
+                linkhref:'',
+                alt:''
+            },
+            product:[{
+                imgsrc:'',
+                linkhref:'',
+                alt:''
+            }],
+            footer:{
+                fb:{
+                    imgsrc:'',
+                    linkhref:''
+                },
+                ig:{
+                    imgsrc:'',
+                    linkhref:''
+                },
+                line:{
+                    imgsrc:'',
+                    linkhref:''
+                },
+                content:{
+                    imgsrc:''
+                }
+            }
+        }
+    }
+});
+
