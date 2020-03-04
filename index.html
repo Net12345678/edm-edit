@@ -17,9 +17,8 @@
           <div class="input-group">
             <select class="custom-select" id="chooseEdmTemplate" aria-label="choose EDM Template">
               <option selected="">請選擇版型...</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="1">1</option>
+
             </select>
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button">送出</button>
@@ -34,7 +33,7 @@
             </div>
             <div class="form-group">
               <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
-              <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址.." v-model='layoutA.logo.imgsrc'>
+              <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址.." v-model='DefaultLayout.logo.imgsrc'>
             </div>
             <!-- 輸出 html 按鈕 -->
             <div class="text-right mb-3">
@@ -55,7 +54,7 @@
                     <td>
                       <a href="https://www.nuvfashion.com/" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="640"> -->
-                        <img v-bind:src="layoutA.logo.imgsrc" alt="logo" style="vertical-align:0; display:block;" width="640">
+                        <img src="https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)" alt="logo" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -191,8 +190,8 @@
                   </tr>
                 </tbody>
               </table>
-            <!-- footer -->
-            <table width="640" align="center" cellpadding="0" cellspacing="0">
+             <!-- footer -->
+             <table width="640" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td> 
                   <a href="https://www.nuvfashion.com/">
@@ -214,7 +213,6 @@
                 <td>
                   <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
                   <img src="https://fakeimg.pl/460x158/000000/fff?text=footer-content(460x158)" alt="footer_content" style="vertical-align:0; display:block;" width="460"></td>
-                
               </tr>
             </table>
             </div>
