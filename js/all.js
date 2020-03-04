@@ -84,7 +84,7 @@ var app = new Vue({
 			},
 			{
 				logo: {
-					id: 'logo',
+					id: 'logo2',
 					link: '',
 					imgSrc: '',
 					linkText: 'Logo 連結',
@@ -154,8 +154,17 @@ var app = new Vue({
 				}
 			},
 		],
+		chooseTtmplate: '請選擇版型...',
+		nowEDMTemplate: '',
 	},
-
+	methods: {
+		choose(value) {
+			if( typeof(value) !== 'number' ){ 
+				return;
+			};
+			this.nowEDMTemplate = this.EDMtemplate[value];
+		},
+	},
 
 });
 
