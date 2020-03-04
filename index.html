@@ -8,248 +8,220 @@
   <link href="source/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container-fluid vh-100">
-    <div class="row h-100">
-      <!-- 表單 -->
-      <div class="l-aside_form col-4 border-right border-secondary h-100 pt-3 overflow-auto">
-        <!-- 選版型 -->
-        <div class="input-group">
-          <select class="custom-select" id="chooseEdmTemplate" aria-label="choose EDM Template">
-            <option selected="">請選擇版型...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">送出</button>
+  <div id="app">
+    <div class="container-fluid vh-100">
+      <div class="row h-100">
+        <!-- 表單 -->
+        <div class="l-aside_form col-4 border-right border-secondary h-100 pt-3 overflow-auto">
+          <!-- 選版型 -->
+          <div class="input-group">
+            <select class="custom-select" id="chooseEdmTemplate" aria-label="choose EDM Template">
+              <option selected="">請選擇版型...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">送出</button>
+            </div>
           </div>
+          <hr>
+          <!-- input -->
+          <form>
+            <div class="form-group">
+              <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
+              <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
+              <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
+            </div>
+            <!-- 輸出 html 按鈕 -->
+            <div class="text-right mb-3">
+              <button type="button" class="btn btn-dark">製作</button>
+            </div>
+          </form>
+          
         </div>
-        <hr>
-        <!-- input -->
-        <form>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
-            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
-          </div>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
-            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
-          </div>
-        </form>
-        <form>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
-            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
-          </div>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
-            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
-          </div>
-        </form>
-        <form>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
-            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
-          </div>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
-            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
-          </div>
-        </form>
-        <form>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput">Logo 連結</label>
-            <input class="form-control" id="formGroupExampleInput" type="text" placeholder="輸入 Logo 連結..">
-          </div>
-          <div class="form-group">
-            <label class="mb-2" for="formGroupExampleInput2">Logo 圖片位址</label>
-            <input class="form-control" id="formGroupExampleInput2" type="text" placeholder="輸入 Logo 圖片位址..">
-          </div>
-          <!-- 輸出 html 按鈕 -->
-          <div class="text-right mb-3">
-            <button type="button" class="btn btn-dark">製作</button>
-          </div>
-        </form>
-        
-      </div>
-      <!-- 預覽 -->
-      <div class="col-8 overflow-auto h-100 mx-auto">
-        <div class="preview" id="preview">
-          <!-- html 要輸出的部分 -->
-          <div style="width: 640px; text-align: left; margin: 0 auto; padding: 0">
-            <!-- logo & 選單 -->
-            <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="https://www.nuvfashion.com/" target="_blank">
-                      <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="640"> -->
-                      <img src="https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)" alt="logo" style="vertical-align:0; display:block;" width="640">
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="menu_women.jpg" alt="women" width="200" border="0"> -->
-                              <img src="https://fakeimg.pl/200x88/ffffff/000?text=WOMEN" alt="women" style="vertical-align:0; display:block;" width="200" border="0">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="menu_men.jpg" alt="men" width="120" border="0"> -->
-                              <img src="https://fakeimg.pl/120x88/ffffff/000?text=MEN" alt="men" style="vertical-align:0; display:block;" width="120" border="0">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="menu_kids.jpg" alt="kids" width="145" border="0"> -->
-                              <img src="https://fakeimg.pl/145x88/ffffff/000?text=KIDS" alt="kids" style="vertical-align:0; display:block;" width="145" border="0">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="menu_baby.jpg" alt="baby" width="175" border="0"> -->
-                              <img src="https://fakeimg.pl/175x88/ffffff/000?text=BABY" alt="baby" style="vertical-align:0; display:block;" width="175" border="0">
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- banner -->
-            <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="https://www.nuvfashion.com/" target="_blank">
-                      <img src="https://fakeimg.pl/640x600/ff45f9/000?text=BANNER" alt="banner_1" style="vertical-align:0; display:block;" width="640">
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- btn -->
-            <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="https://www.nuvfashion.com/" target="_blank">
-                      <img src="https://fakeimg.pl/640x150/f00d30/000?text=BUTTON" alt="BUTTON" style="vertical-align:0; display:block;" width="640">
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- men 1 雙欄-->
-            <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
-              <tbody>
-                <tr>
-                  <td>
-                    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="men_title.jpg" alt="men_title" width="640"> -->
-                              <img src="https://fakeimg.pl/640x162/ddd555/000?text=MEN-title(640x162)" alt="men_title" style="vertical-align:0; display:block;" width="640">
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="320"> -->
-                              <img src="https://fakeimg.pl/320x872/555555/000?text=MEN-left" alt="men1_left" style="vertical-align:0; display:block;" width="320">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="320"> -->
-                              <img src="https://fakeimg.pl/320x872/ff0000/000?text=MEN-right" alt="men1_right" style="vertical-align:0; display:block;" width="320">
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- men 2 單欄-->
-            <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
-              <tbody>
-                <tr>
-                  <td>
-                    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <a href="https://www.nuvfashion.com/" target="_blank">
-                              <!-- <img style="vertical-align:0; display:block;" src="men_title.jpg" alt="men_title" width="640"> -->
-                              <img src="https://fakeimg.pl/640x162/ddd555/000?text=MEN-title(640x162)" alt="men_title" style="vertical-align:0; display:block;" width="640">
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="https://www.nuvfashion.com/" target="_blank">
-                      <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="640"> -->
-                      <img src="https://fakeimg.pl/640x859/00154d?text=MEN" alt="men-pants" style="vertical-align:0; display:block;" width="640">
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-           <!-- footer -->
-           <table width="640" align="center" cellpadding="0" cellspacing="0">
-            <tr>
-              <td> 
-                <a href="https://www.nuvfashion.com/">
+        <!-- 預覽 -->
+        <div class="col-8 overflow-auto h-100 mx-auto">
+          <div class="preview" id="preview">
+            <!-- html 要輸出的部分 -->
+            <div style="width: 640px; text-align: left; margin: 0 auto; padding: 0">
+              <!-- logo & 選單 -->
+              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://www.nuvfashion.com/" target="_blank">
+                        <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="640"> -->
+                        <img v-bind:src="layoutA.logo.imgsrc" alt="logo" style="vertical-align:0; display:block;" width="640">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="menu_women.jpg" alt="women" width="200" border="0"> -->
+                                <img src="https://fakeimg.pl/200x88/ffffff/000?text=WOMEN" alt="women" style="vertical-align:0; display:block;" width="200" border="0">
+                              </a>
+                            </td>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="menu_men.jpg" alt="men" width="120" border="0"> -->
+                                <img src="https://fakeimg.pl/120x88/ffffff/000?text=MEN" alt="men" style="vertical-align:0; display:block;" width="120" border="0">
+                              </a>
+                            </td>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="menu_kids.jpg" alt="kids" width="145" border="0"> -->
+                                <img src="https://fakeimg.pl/145x88/ffffff/000?text=KIDS" alt="kids" style="vertical-align:0; display:block;" width="145" border="0">
+                              </a>
+                            </td>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="menu_baby.jpg" alt="baby" width="175" border="0"> -->
+                                <img src="https://fakeimg.pl/175x88/ffffff/000?text=BABY" alt="baby" style="vertical-align:0; display:block;" width="175" border="0">
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- banner -->
+              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://www.nuvfashion.com/" target="_blank">
+                        <img src="https://fakeimg.pl/640x600/ff45f9/000?text=BANNER" alt="banner_1" style="vertical-align:0; display:block;" width="640">
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- btn -->
+              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://www.nuvfashion.com/" target="_blank">
+                        <img src="https://fakeimg.pl/640x150/f00d30/000?text=BUTTON" alt="BUTTON" style="vertical-align:0; display:block;" width="640">
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- men 1 雙欄-->
+              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="men_title.jpg" alt="men_title" width="640"> -->
+                                <img src="https://fakeimg.pl/640x162/ddd555/000?text=MEN-title(640x162)" alt="men_title" style="vertical-align:0; display:block;" width="640">
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="320"> -->
+                                <img src="https://fakeimg.pl/320x872/555555/000?text=MEN-left" alt="men1_left" style="vertical-align:0; display:block;" width="320">
+                              </a>
+                            </td>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="320"> -->
+                                <img src="https://fakeimg.pl/320x872/ff0000/000?text=MEN-right" alt="men1_right" style="vertical-align:0; display:block;" width="320">
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- men 2 單欄-->
+              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a href="https://www.nuvfashion.com/" target="_blank">
+                                <!-- <img style="vertical-align:0; display:block;" src="men_title.jpg" alt="men_title" width="640"> -->
+                                <img src="https://fakeimg.pl/640x162/ddd555/000?text=MEN-title(640x162)" alt="men_title" style="vertical-align:0; display:block;" width="640">
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://www.nuvfashion.com/" target="_blank">
+                        <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="640"> -->
+                        <img src="https://fakeimg.pl/640x859/00154d?text=MEN" alt="men-pants" style="vertical-align:0; display:block;" width="640">
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- footer -->
+            <table width="640" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td> 
+                  <a href="https://www.nuvfashion.com/">
+                    <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
+                    <img src="https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
+                  </a>
+                </td><td>
+                  <a href="https://www.nuvfashion.com/">
+                    <!-- <img style="vertical-align:0; display:block;" src="footer_ig.jpg" alt="footer_title" width="640"> -->
+                    <img src="https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.nuvfashion.com/">
+                    <!-- <img style="vertical-align:0; display:block;" src="footer_line.jpg" alt="footer_title" width="640"> -->
+                    <img src="https://fakeimg.pl/60x158/000000/fff?text=line(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
+                  </a>
+                </td>
+                <td>
                   <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                  <img src="https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
-                </a>
-              </td><td>
-                <a href="https://www.nuvfashion.com/">
-                  <!-- <img style="vertical-align:0; display:block;" src="footer_ig.jpg" alt="footer_title" width="640"> -->
-                  <img src="https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
-                </a>
-              </td>
-              <td>
-                <a href="https://www.nuvfashion.com/">
-                  <!-- <img style="vertical-align:0; display:block;" src="footer_line.jpg" alt="footer_title" width="640"> -->
-                  <img src="https://fakeimg.pl/60x158/000000/fff?text=line(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
-                </a>
-              </td>
-              <td>
-                <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                <img src="https://fakeimg.pl/460x158/000000/fff?text=footer-content(460x158)" alt="footer_content" style="vertical-align:0; display:block;" width="460"></td>
-              
-            </tr>
-          </table>
+                  <img src="https://fakeimg.pl/460x158/000000/fff?text=footer-content(460x158)" alt="footer_content" style="vertical-align:0; display:block;" width="460"></td>
+                
+              </tr>
+            </table>
+            </div>
           </div>
         </div>
-      </div>
-    </div>  
+      </div>  
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/all.js"></script>

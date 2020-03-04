@@ -1,9 +1,10 @@
 var EDMLayout = new Vue({
+    el:'#app',
     data:{
         layoutA:{
             logo:{
                 imgsrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
-                linkhref:''
+                linkhref:'#'
             },
             banner:{
                 imgsrc:'',
