@@ -3,34 +3,34 @@ var app = new Vue({
 	data: {
         DefaultLayout:{
             logo:{
-                imgsrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
-                linkhref:'#'
+                imgSrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
+                linkText:'#'
             },
             banner:{
-                imgsrc:'',
-                linkhref:'',
+                imgSrc:'',
+                linkText:'',
                 alt:''
             },
             product:[{
-                imgsrc:'',
-                linkhref:'',
+                imgSrc:'',
+                linkText:'',
                 alt:''
             }],
             footer:{
                 fb:{
-                    imgsrc:'',
-                    linkhref:''
+                    imgSrc:'',
+                    linkText:''
                 },
                 ig:{
-                    imgsrc:'',
-                    linkhref:''
+                    imgSrc:'',
+                    linkText:''
                 },
                 line:{
-                    imgsrc:'',
-                    linkhref:''
+                    imgSrc:'',
+                    linkText:''
                 },
                 content:{
-                    imgsrc:''
+                    imgSrc:''
                 }
             }
         },
@@ -121,7 +121,7 @@ var app = new Vue({
 					id: 'logo',
 					link: '',
 					imgSrc: '',
-					linkText: 'Logo 連結',
+					linkText: '',
 					imgText: 'Logo 圖片位址',
 				},
 				banner: {
@@ -187,7 +187,7 @@ var app = new Vue({
 					}
 				}
 			},
-		],
-	}
+        ],
+    }
 });
 
