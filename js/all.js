@@ -1,6 +1,40 @@
 var app = new Vue({
 	el: '#app',
 	data: {
+        DefaultLayout:{
+            logo:{
+                imgSrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
+                linkText:'#'
+            },
+            banner:{
+                imgSrc:'',
+                linkText:'',
+                alt:''
+            },
+            product:[{
+                imgSrc:'',
+                linkText:'',
+                alt:''
+            }],
+            footer:{
+                fb:{
+                    imgSrc:'',
+                    linkText:''
+                },
+                ig:{
+                    imgSrc:'',
+                    linkText:''
+                },
+                line:{
+                    imgSrc:'',
+                    linkText:''
+                },
+                content:{
+                    imgSrc:''
+                }
+            }
+        },
+
 		EDMtemplate: [
 			{
 				logo: {
@@ -87,7 +121,7 @@ var app = new Vue({
 					id: 'logo2',
 					link: '',
 					imgSrc: '',
-					linkText: 'Logo 連結',
+					linkText: '',
 					imgText: 'Logo 圖片位址',
 				},
 				banner: {
