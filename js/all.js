@@ -247,36 +247,131 @@ var app = new Vue({
 		chooseTtmplate: '請選擇版型...',
 		nowEDMTemplate: '',
 		nowEDMTemplateIndex: '',
-		EDMHTML: [
+		EDMForm: [
 			`
-			<div class="form-group">
-				<label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
-				<div class="row">
-					<div class="col">
-						<input type="text" class="form-control" placeholder="連結">
-					</div>
-					<div class="col">
-						<input type="text" class="form-control" placeholder="圖片位址">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="mb-2" for="logo_link">Banner 連結 / 圖片</label>
-				<div class="row">
-					<div class="col">
-						<input type="text" class="form-control" placeholder="連結">
-					</div>
-					<div class="col">
-						<input type="text" class="form-control" placeholder="圖片位址">
-					</div>
-				</div>
-			</div>
-			<div class="text-right mb-3">
-				<button type="button" class="btn btn-dark">製作</button>
-			</div>
+			<!-- logo -->
+            <div class="form-group">
+              <label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.logo.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.logo.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <!-- menu -->
+            <div class="form-group">
+              <label class="mb-2" for="women_link">WOMEN 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[0].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[0].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="men_link">MEN 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[1].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[1].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="kids_link">KIDS 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[2].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[2].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="baby_link">BABY 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[3].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[3].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- banner -->
+            <div class="form-group">
+              <label class="mb-2" for="banner_link">Banner 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.banner.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.banner.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- button -->
+            <div class="form-group">
+              <label class="mb-2" for="button_link">Button 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.button.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.button.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- product -->
+            <div v-for="(product, index) in nowEDMTemplate.product" class="form-group">
+              <label class="mb-2" for="product_link">Product{{index + 1}} 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="product.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="product.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- footer-icon -->
+            <div v-for="footerIcon in nowEDMTemplate.footerIcon"  class="form-group">
+              <label class="mb-2" for="footerIcon_link">{{footerIcon.id}} 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="footerIcon.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="footerIcon.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- footer-content -->
+            <div class="form-group">
+              <label class="mb-2" for="footerContent_link">footerContent 連結 / 圖片</label>
+              <div class="row">                
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.footerContent.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
 			`,
 			`1`,
 		],
+		oupputData: '',
 	},
 	methods: {
 		choose(value) {
@@ -285,6 +380,10 @@ var app = new Vue({
 			};
 			this.nowEDMTemplate = this.EDMtemplate[value];
 			this.nowEDMTemplateIndex = value;
+		},
+		outputEDMHtml() {
+			const preview = document.getElementById('preview');
+			this.oupputData = preview.firstChild.outerHTML;
 		},
 	},
 	computed: {
