@@ -191,7 +191,7 @@ var app = new Vue({
 		chooseTtmplate: '請選擇版型...',
 		nowEDMTemplate: '',
 		nowEDMTemplateIndex: '',
-		EDMHTML: [
+		EDMForm: [
 			`
 			<div class="form-group">
 				<label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
@@ -215,12 +215,10 @@ var app = new Vue({
 					</div>
 				</div>
 			</div>
-			<div class="text-right mb-3">
-				<button type="button" class="btn btn-dark">製作</button>
-			</div>
 			`,
 			`1`,
 		],
+		oupputData: '',
 	},
 	methods: {
 		choose(value) {
@@ -229,6 +227,10 @@ var app = new Vue({
 			};
 			this.nowEDMTemplate = this.EDMtemplate[value];
 			this.nowEDMTemplateIndex = value;
+		},
+		outputEDMHtml() {
+			const preview = document.getElementById('preview');
+			this.oupputData = preview.firstChild.outerHTML;
 		},
 	},
 	computed: {
