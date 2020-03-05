@@ -26,40 +26,128 @@
           <hr>
           <!-- input -->
           <h2 class="h2" v-if="!nowEDMTemplate">請選擇版型</h2>
-          <form v-if="nowEDMTemplate" v-html="EDMHTML[nowEDMTemplateIndex]">
+          <form v-if="nowEDMTemplate">
+            <!-- logo -->
             <div class="form-group">
               <label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate" class="form-control" placeholder="連結">
+                  <input type="text" v-model="nowEDMTemplate.logo.link" class="form-control" placeholder="連結">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="圖片位址">
+                  <input type="text" v-model="nowEDMTemplate.logo.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <!-- menu -->
+            <div class="form-group">
+              <label class="mb-2" for="women_link">WOMEN 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[0].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[0].imgSrc" class="form-control" placeholder="圖片位址">
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <label class="mb-2" for="logo_link">Banner 連結 / 圖片</label>
+              <label class="mb-2" for="men_link">MEN 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="連結">
+                  <input type="text" v-model="nowEDMTemplate.menu[1].link" class="form-control" placeholder="連結">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="圖片位址">
+                  <input type="text" v-model="nowEDMTemplate.menu[1].imgSrc" class="form-control" placeholder="圖片位址">
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <label class="mb-2" for="logo_link">Banner 連結 / 圖片</label>
+              <label class="mb-2" for="kids_link">KIDS 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="連結">
+                  <input type="text" v-model="nowEDMTemplate.menu[2].link" class="form-control" placeholder="連結">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="圖片位址">
+                  <input type="text" v-model="nowEDMTemplate.menu[2].imgSrc" class="form-control" placeholder="圖片位址">
                 </div>
               </div>
             </div>
+            <div class="form-group">
+              <label class="mb-2" for="baby_link">BABY 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[3].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[3].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- banner -->
+            <div class="form-group">
+              <label class="mb-2" for="banner_link">Banner 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.banner.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.banner.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- button -->
+            <div class="form-group">
+              <label class="mb-2" for="button_link">Button 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.button.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.button.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- product -->
+            <div v-for="(product, index) in nowEDMTemplate.product" class="form-group">
+              <label class="mb-2" for="product_link">Product{{index + 1}} 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="product.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="product.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- footer-icon -->
+            <div v-for="footerIcon in nowEDMTemplate.footerIcon"  class="form-group">
+              <label class="mb-2" for="footerIcon_link">{{footerIcon.id}} 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="footerIcon.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="footerIcon.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- footer-content -->
+            <div class="form-group">
+              <label class="mb-2" for="footerContent_link">footerContent 連結 / 圖片</label>
+              <div class="row">                
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.footerContent.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- output -->
             <div class="text-right mb-3">
               <button type="button" class="btn btn-dark">製作</button>
             </div>
@@ -70,15 +158,16 @@
         <div class="col-8 overflow-auto h-100 mx-auto">
           <div class="preview" id="preview">
             <!-- html 要輸出的部分 -->
-            <div style="width: 640px; text-align: left; margin: 0 auto; padding: 0">
+            <div v-if="nowEDMTemplate" style="width: 640px; text-align: left; margin: 0 auto; padding: 0">
               <!-- logo & 選單 -->
               <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                   <tr>
                     <td>
-                      <a :href="DefaultLayout.logo.linkText" target="_blank">
+                      <a :href="nowEDMTemplate.logo.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="640"> -->
-                        <img v-if="EDMtemplate.logo.imgSrc" :src='DefaultLayout.logo.imgSrc' alt="logo" style="vertical-align:0; display:block;" width="640">
+                        <img v-if="!nowEDMTemplate.logo.imgSrc" :src='DefaultLayout.logo.imgSrc' alt="logo" style="vertical-align:0; display:block;" width="640">
+                        <img v-else :src='nowEDMTemplate.logo.imgSrc' alt="logo" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -87,28 +176,9 @@
                       <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                         <tbody>
                           <tr>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="menu_women.jpg" alt="women" width="200" border="0"> -->
-                                <img src="https://fakeimg.pl/200x88/ffffff/000?text=WOMEN" alt="women" style="vertical-align:0; display:block;" width="200" border="0">
-                              </a>
-                            </td>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="menu_men.jpg" alt="men" width="120" border="0"> -->
-                                <img src="https://fakeimg.pl/120x88/ffffff/000?text=MEN" alt="men" style="vertical-align:0; display:block;" width="120" border="0">
-                              </a>
-                            </td>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="menu_kids.jpg" alt="kids" width="145" border="0"> -->
-                                <img src="https://fakeimg.pl/145x88/ffffff/000?text=KIDS" alt="kids" style="vertical-align:0; display:block;" width="145" border="0">
-                              </a>
-                            </td>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="menu_baby.jpg" alt="baby" width="175" border="0"> -->
-                                <img src="https://fakeimg.pl/175x88/ffffff/000?text=BABY" alt="baby" style="vertical-align:0; display:block;" width="175" border="0">
+                            <td v-for="(menu, index) in nowEDMTemplate.menu">
+                              <a :href="menu.link" target="_blank">
+                                <img :src="menu.imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
                               </a>
                             </td>
                           </tr>
@@ -123,8 +193,9 @@
                 <tbody>
                   <tr>
                     <td>
-                      <a href="https://www.nuvfashion.com/" target="_blank">
-                        <img src="https://fakeimg.pl/640x600/ff45f9/000?text=BANNER" alt="banner_1" style="vertical-align:0; display:block;" width="640">
+                      <a :href="nowEDMTemplate.link" target="_blank">
+                        <img v-if="!nowEDMTemplate.banner.imgSrc" :src="DefaultLayout.banner.imgSrc" alt="banner_1" style="vertical-align:0; display:block;" width="640">
+                        <img v-else :src="nowEDMTemplate.banner.imgSrc" alt="banner_1" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -135,80 +206,22 @@
                 <tbody>
                   <tr>
                     <td>
-                      <a href="https://www.nuvfashion.com/" target="_blank">
-                        <img src="https://fakeimg.pl/640x150/f00d30/000?text=BUTTON" alt="BUTTON" style="vertical-align:0; display:block;" width="640">
+                      <a href="nowEDMTemplate.button.link" target="_blank">
+                        <img v-if="!nowEDMTemplate.button.imgSrc" :src="DefaultLayout.button.imgSrc" alt="BUTTON" style="vertical-align:0; display:block;" width="640">
+                        <img v-else :src="nowEDMTemplate.button.imgSrc" alt="BUTTON" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
                 </tbody>
-              </table>
-              <!-- men 1 雙欄-->
-              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                  <tr>
-                    <td>
-                      <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="men_title.jpg" alt="men_title" width="640"> -->
-                                <img src="https://fakeimg.pl/640x162/ddd555/000?text=MEN-title(640x162)" alt="men_title" style="vertical-align:0; display:block;" width="640">
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="320"> -->
-                                <img src="https://fakeimg.pl/320x872/555555/000?text=MEN-left" alt="men1_left" style="vertical-align:0; display:block;" width="320">
-                              </a>
-                            </td>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="320"> -->
-                                <img src="https://fakeimg.pl/320x872/ff0000/000?text=MEN-right" alt="men1_right" style="vertical-align:0; display:block;" width="320">
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              </table>              
               <!-- men 2 單欄-->
               <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                  <tr>
+                <tbody>                  
+                  <tr v-for="(product, index) in nowEDMTemplate.product">
                     <td>
-                      <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <a href="https://www.nuvfashion.com/" target="_blank">
-                                <!-- <img style="vertical-align:0; display:block;" src="men_title.jpg" alt="men_title" width="640"> -->
-                                <img src="https://fakeimg.pl/640x162/ddd555/000?text=MEN-title(640x162)" alt="men_title" style="vertical-align:0; display:block;" width="640">
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://www.nuvfashion.com/" target="_blank">
+                      <a :href="product.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="640"> -->
-                        <img src="https://fakeimg.pl/640x859/00154d?text=MEN" alt="men-pants" style="vertical-align:0; display:block;" width="640">
+                        <img :src="product.imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -217,26 +230,17 @@
              <!-- footer -->
              <table width="640" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td> 
-                  <a href="https://www.nuvfashion.com/">
+                <td v-for="footerIcon in nowEDMTemplate.footerIcon"> 
+                  <a :href="footerIcon.link">
                     <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                    <img src="https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
-                  </a>
-                </td><td>
-                  <a href="https://www.nuvfashion.com/">
-                    <!-- <img style="vertical-align:0; display:block;" src="footer_ig.jpg" alt="footer_title" width="640"> -->
-                    <img src="https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
-                  </a>
-                </td>
-                <td>
-                  <a href="https://www.nuvfashion.com/">
-                    <!-- <img style="vertical-align:0; display:block;" src="footer_line.jpg" alt="footer_title" width="640"> -->
-                    <img src="https://fakeimg.pl/60x158/000000/fff?text=line(60x158)" alt="footer_icon" style="vertical-align:0; display:block;" width="60">
+                    <img :src="footerIcon.imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
                   </a>
                 </td>
                 <td>
                   <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                  <img src="https://fakeimg.pl/460x158/000000/fff?text=footer-content(460x158)" alt="footer_content" style="vertical-align:0; display:block;" width="460"></td>
+                  <img v-if="!nowEDMTemplate.footerContent.imgSrc" :src="DefaultLayout.footerContent.imgSrc" alt="footer_content" style="vertical-align:0; display:block;" width="460">
+                  <img v-else :src="nowEDMTemplate.footerContent.imgSrc" alt="footer_content" style="vertical-align:0; display:block;" width="460">
+                </td>
               </tr>
             </table>
             </div>

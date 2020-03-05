@@ -4,34 +4,67 @@ var app = new Vue({
 		DefaultLayout:{
 				logo:{
 						imgSrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
-						linkText:'#'
+						link:'#',
 				},
+				menu: [{
+					id: 'women',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/200x88/ffffff/000?text=WOMEN',
+					alt: 'women',
+					width: '200'
+				},
+				{
+					id: 'men',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/120x88/ffffff/000?text=MEN',
+					alt: 'men',
+					width: '120'
+				},
+				{
+					id: 'kids',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/145x88/ffffff/000?text=KIDS',
+					alt: 'kids',
+					width: '145'
+				},
+				{
+					id: 'baby',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/175x88/ffffff/000?text=BABY',
+					alt: 'baby',
+					width: '175'
+				}
+				],
 				banner:{
-						imgSrc:'',
-						linkText:'',
-						alt:''
+						imgSrc:'https://fakeimg.pl/640x600/ff45f9/000?text=BANNER',
+						link:'#',						
+				},
+				button:{
+					imgSrc:'https://fakeimg.pl/640x150/f00d30/000?text=BUTTON',
+					link:'#',						
 				},
 				product:[{
 						imgSrc:'',
-						linkText:'',
+						link:'',
 						alt:''
 				}],
 				footer:{
 						fb:{
 								imgSrc:'',
-								linkText:''
+								link:''
 						},
 						ig:{
 								imgSrc:'',
-								linkText:''
+								link:''
 						},
 						line:{
 								imgSrc:'',
-								linkText:''
-						},
-						content:{
-								imgSrc:''
+								link:''
 						}
+				},
+				footerContent: {
+					id: 'footerContent',
+					imgSrc: 'https://fakeimg.pl/460x158/000000/fff?text=footer-content(460x158)',
 				}
 		},
 
@@ -39,81 +72,120 @@ var app = new Vue({
 			{
 				logo: {
 					id: 'logo',
-					link: '',
+					link: 'https://www.nuvfashion.com/',
 					imgSrc: '',
-					linkText: 'Logo 連結',
-					imgText: 'Logo 圖片位址',
 				},
+				menu: [{
+					id: 'women',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/200x88/ffffff/000?text=WOMEN',
+					alt:'women',
+					width: '200'
+				},
+				{
+					id: 'men',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/120x88/ffffff/000?text=MEN',
+					alt:'men',
+					width: '120'
+				},
+				{
+					id: 'kids',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/145x88/ffffff/000?text=KIDS',
+					alt:'kids',
+					width: '145'
+				},
+				{
+					id: 'baby',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/175x88/ffffff/000?text=BABY',
+					alt:'baby',
+					width: '175'
+				}
+				],
 				banner: {
 					id: 'banner',
 					link: '',
 					imgSrc: '',
-					alt: '',
-					linkText: 'Banner 連結',
-					imgText: 'Banner 圖片位址',
-					aliText: 'Banner 描述',
+				},
+				button:{
+					link:'',
+					imgSrc:'',						
 				},
 				product: [
 					{
 						id: 'pd_1',
-						link: '',
-						imgSrc: '',
-						alt: '',
-						linkText: 'Product_01 連結',
-						imgText: 'Product_01 圖片位址',
-						aliText: 'Product_01 描述',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product01',						
 					},
 					{
 						id: 'pd_2',
-						link: '',
-						imgSrc: '',
-						alt: '',
-						linkText: 'Product_02 連結',
-						imgText: 'Product_02 圖片位址',
-						aliText: 'Product_02 描述',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product02',						
 					},
 					{
 						id: 'pd_3',
-						link: '',
-						imgSrc: '',
-						alt: '',
-						linkText: 'Product_03 連結',
-						imgText: 'Product_03 圖片位址',
-						aliText: 'Product_03 描述',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product03',
 					},
+					{
+						id: 'pd_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product04',						
+					},
+					{
+						id: 'pd_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product05',						
+					},
+					{
+						id: 'pd_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product06',						
+					},
+					{
+						id: 'pd_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product07',						
+					},
+					{
+						id: 'pd_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product08',						
+					}
 				],
-				footer: {
+				footerIcon: {
 					fb: {
 						id: 'fb',
-						link: '',
-						imgSrc: '',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
 						alt: 'facebook',
-						linkText: 'Facebook 連結',
-						imgText: 'Facebook 圖片位址',
 					},
 					ig: {
 						id: 'ig',
-						link: '',
-						imgSrc: '',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
 						alt: 'instagram',
-						linkText: 'Instagram 連結',
-						imgText: 'Instagram 圖片位址',
 					},
 					line: {
 						id: 'line',
-						link: '',
-						imgSrc: '',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
 						alt: 'line',
-						linkText: 'Line 連結',
-						imgText: 'Line 圖片位址',
-					},
-					content: {
-						id: 'footerContent',
-						link: '',
-						imgSrc: '',
-						linkText: 'Footer 連結',
-						imgText: 'Footer 圖片位址',
-					}
+					}					
+				},
+				footerContent: {
+					id: 'footerContent',
+					imgSrc: '',
 				}
 			},
 			{
@@ -121,16 +193,12 @@ var app = new Vue({
 					id: 'logo2',
 					link: '',
 					imgSrc: '',
-					linkText: '',
-					imgText: 'Logo 圖片位址',
 				},
 				banner: {
 					id: 'banner',
 					link: '',
 					imgSrc: '',
 					alt: '',
-					linkText: 'Banner 連結',
-					imgText: 'Banner 圖片位址',
 					aliText: 'Banner 描述',
 				},
 				product: [
@@ -139,8 +207,6 @@ var app = new Vue({
 						link: '',
 						imgSrc: '',
 						alt: '',
-						linkText: 'Product_01 連結',
-						imgText: 'Product_01 圖片位址',
 						aliText: 'Product_01 描述',
 					},
 					{
@@ -148,8 +214,6 @@ var app = new Vue({
 						link: '',
 						imgSrc: '',
 						alt: '',
-						linkText: 'Product_02 連結',
-						imgText: 'Product_02 圖片位址',
 						aliText: 'Product_02 描述',
 					},
 				],
@@ -159,31 +223,23 @@ var app = new Vue({
 						link: '',
 						imgSrc: '',
 						alt: 'facebook',
-						linkText: 'Facebook 連結',
-						imgText: 'Facebook 圖片位址',
 					},
 					ig: {
 						id: 'ig',
 						link: '',
 						imgSrc: '',
 						alt: 'instagram',
-						linkText: 'Instagram 連結',
-						imgText: 'Instagram 圖片位址',
 					},
 					line: {
 						id: 'line',
 						link: '',
 						imgSrc: '',
 						alt: 'line',
-						linkText: 'Line 連結',
-						imgText: 'Line 圖片位址',
 					},
 					content: {
 						id: 'footerContent',
 						link: '',
 						imgSrc: '',
-						linkText: 'Footer 連結',
-						imgText: 'Footer 圖片位址',
 					}
 				}
 			},
