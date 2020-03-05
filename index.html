@@ -32,7 +32,7 @@
               <label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="連結">
+                  <input type="text" v-model="nowEDMTemplate" class="form-control" placeholder="連結">
                 </div>
                 <div class="col">
                   <input type="text" class="form-control" placeholder="圖片位址">
@@ -59,7 +59,7 @@
                     <td>
                       <a :href="DefaultLayout.logo.linkText" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="640"> -->
-                        <img :src='DefaultLayout.logo.imgSrc' alt="logo" style="vertical-align:0; display:block;" width="640">
+                        <img v-if="EDMtemplate.logo.imgSrc" :src='DefaultLayout.logo.imgSrc' alt="logo" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
