@@ -1,39 +1,39 @@
 var app = new Vue({
 	el: '#app',
 	data: {
-        DefaultLayout:{
-            logo:{
-                imgSrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
-                linkText:'#'
-            },
-            banner:{
-                imgSrc:'',
-                linkText:'',
-                alt:''
-            },
-            product:[{
-                imgSrc:'',
-                linkText:'',
-                alt:''
-            }],
-            footer:{
-                fb:{
-                    imgSrc:'',
-                    linkText:''
-                },
-                ig:{
-                    imgSrc:'',
-                    linkText:''
-                },
-                line:{
-                    imgSrc:'',
-                    linkText:''
-                },
-                content:{
-                    imgSrc:''
-                }
-            }
-        },
+		DefaultLayout:{
+				logo:{
+						imgSrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
+						linkText:'#'
+				},
+				banner:{
+						imgSrc:'',
+						linkText:'',
+						alt:''
+				},
+				product:[{
+						imgSrc:'',
+						linkText:'',
+						alt:''
+				}],
+				footer:{
+						fb:{
+								imgSrc:'',
+								linkText:''
+						},
+						ig:{
+								imgSrc:'',
+								linkText:''
+						},
+						line:{
+								imgSrc:'',
+								linkText:''
+						},
+						content:{
+								imgSrc:''
+						}
+				}
+		},
 
 		EDMtemplate: [
 			{
@@ -190,6 +190,37 @@ var app = new Vue({
 		],
 		chooseTtmplate: '請選擇版型...',
 		nowEDMTemplate: '',
+		nowEDMTemplateIndex: '',
+		EDMHTML: [
+			`
+			<div class="form-group">
+				<label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="連結">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" placeholder="圖片位址">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="mb-2" for="logo_link">Banner 連結 / 圖片</label>
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="連結">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" placeholder="圖片位址">
+					</div>
+				</div>
+			</div>
+			<div class="text-right mb-3">
+				<button type="button" class="btn btn-dark">製作</button>
+			</div>
+			`,
+			`1`,
+		],
 	},
 	methods: {
 		choose(value) {
@@ -197,7 +228,14 @@ var app = new Vue({
 				return;
 			};
 			this.nowEDMTemplate = this.EDMtemplate[value];
+			this.nowEDMTemplateIndex = value;
 		},
+	},
+	computed: {
+		toNumber() {
+			this.nowEDMTemplateIndex = parseInt(this.nowEDMTemplateIndex);
+		}
+		
 	},
 
 });

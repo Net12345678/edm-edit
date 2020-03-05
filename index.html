@@ -26,8 +26,7 @@
           <hr>
           <!-- input -->
           <h2 class="h2" v-if="!nowEDMTemplate">請選擇版型</h2>
-          <form v-if="nowEDMTemplate">
-            
+          <form v-if="nowEDMTemplate" v-html="EDMHTML[nowEDMTemplateIndex]">
             <div class="form-group">
               <label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
               <div class="row">
@@ -39,8 +38,28 @@
                 </div>
               </div>
             </div>
-
-          
+            <div class="form-group">
+              <label class="mb-2" for="logo_link">Banner 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="logo_link">Banner 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
             <div class="text-right mb-3">
               <button type="button" class="btn btn-dark">製作</button>
             </div>
