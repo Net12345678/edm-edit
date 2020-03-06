@@ -26,12 +26,127 @@
           <hr>
           <!-- input -->
           <h2 class="h2" v-if="!nowEDMTemplate">請選擇版型</h2>
-          <form v-if="nowEDMTemplate" v-html="EDMForm[nowEDMTemplateIndex]">
-            
 
-            <!-- output -->
-            <div class="text-right mb-3">
-              <button type="button" class="btn btn-dark">製作</button>
+          <!-- <form id="edmInput" v-if="nowEDMTemplate" v-html="EDMForm[nowEDMTemplateIndex]"> -->
+          <form id="edmInput" v-if="nowEDMTemplate">
+            <!-- form layout -->
+            <!-- logo -->
+            <div class="form-group" v-if="nowEDMTemplate.logo">
+              <label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.logo.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.logo.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <!-- menu -->
+            <div class="form-group">
+              <label class="mb-2" for="women_link">WOMEN 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[0].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[0].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="men_link">MEN 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[1].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[1].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="kids_link">KIDS 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[2].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[2].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mb-2" for="baby_link">BABY 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[3].link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.menu[3].imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <!-- banner -->
+            <div class="form-group">
+              <label class="mb-2" for="banner_link">Banner 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.banner.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.banner.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- button -->
+            <div class="form-group" v-if="nowEDMTemplate.button">
+              <label class="mb-2" for="button_link">Button 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.button.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.button.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <!-- footer-icon -->
+            <div v-for="footerIcon in nowEDMTemplate.footerIcon"  class="form-group">
+              <label class="mb-2" for="footerIcon_link">{{footerIcon.id}} 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="footerIcon.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="footerIcon.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+
+            <!-- footer-content -->
+            <div class="form-group">
+              <label class="mb-2" for="footerContent_link">footerContent 連結 / 圖片</label>
+              <div class="row">                
+                <div class="col">
+                  <input type="text" v-model="nowEDMTemplate.footerContent.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
+            </div>
+            <!-- layout end -->
+            <!-- custom -->
+            <!-- product -->
+            <div v-for="(product, index) in nowEDMTemplate.product" class="form-group">
+              <label class="mb-2" for="product_link">Product{{index + 1}} 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" v-model="product.link" class="form-control" placeholder="連結">
+                </div>
+                <div class="col">
+                  <input type="text" v-model="product.imgSrc" class="form-control" placeholder="圖片位址">
+                </div>
+              </div>
             </div>
           </form>
           <!-- Button trigger modal -->
@@ -109,7 +224,7 @@
                 </tbody>
               </table>
               <!-- btn -->
-              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
+              <table width="640" align="center" cellpadding="0" cellspacing="0" border="0" v-if="nowEDMTemplate.button">
                 <tbody>
                   <tr>
                     <td>
