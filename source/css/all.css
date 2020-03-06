@@ -48,7 +48,30 @@ table {
   border-spacing: 0;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+hr {
+  border-width: 2px;
+}
+
+.c-imgsrc:focus {
+  border-color: #ff8080;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.3);
+          box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.3);
+}
+
 .l-aside_form {
   border-width: 2px !important;
+}
+
+.l-targetFocus_img {
+  border: 3px solid rgba(255, 0, 0, 0.8);
+}
+
+.l-targetFocus_link {
+  border: 3px solid rgba(0, 86, 179, 0.8);
 }
 /*# sourceMappingURL=all.css.map */

@@ -16,7 +16,7 @@
           <!-- 選版型 -->
           <div class="input-group">
             <select class="custom-select" id="chooseEdmTemplate" aria-label="choose EDM Template" v-model="chooseTtmplate">
-              <option selected="" disabled>請選擇版型...</option>
+              <option selected disabled>請選擇版型...</option>
               <option v-for="(item, key) in EDMtemplate" :value="key">{{key+1}}</option>
             </select>
             <div class="input-group-append">
@@ -29,16 +29,16 @@
 
           <!-- <form id="edmInput" v-if="nowEDMTemplate" v-html="EDMForm[nowEDMTemplateIndex]"> -->
           <form id="edmInput" v-if="nowEDMTemplate">
-            <!-- form layout -->
             <!-- logo -->
+            <h2 class="h2 text-center">Layout</h2>
             <div class="form-group" v-if="nowEDMTemplate.logo">
               <label class="mb-2" for="logo_link">Logo 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.logo.link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="nowEDMTemplate.logo.link" placeholder="連結" @focus="focusImg('edmTable_logo',0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.logo.imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.logo.imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_logo',1)">
                 </div>
               </div>
             </div>
@@ -47,10 +47,10 @@
               <label class="mb-2" for="women_link">WOMEN 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[0].link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[0].link" placeholder="連結" @focus="focusImg('edmTable_women',0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[0].imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[0].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_women',1)">
                 </div>
               </div>
             </div>
@@ -58,10 +58,10 @@
               <label class="mb-2" for="men_link">MEN 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[1].link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[1].link" placeholder="連結" @focus="focusImg('edmTable_men', 0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[1].imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[1].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_men', 1)">
                 </div>
               </div>
             </div>
@@ -69,10 +69,10 @@
               <label class="mb-2" for="kids_link">KIDS 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[2].link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[2].link" placeholder="連結" @focus="focusImg('edmTable_kids', 0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[2].imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[2].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_kids', 1)">
                 </div>
               </div>
             </div>
@@ -80,10 +80,10 @@
               <label class="mb-2" for="baby_link">BABY 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[3].link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[3].link" placeholder="連結" @focus="focusImg('edmTable_baby', 0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.menu[3].imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.menu[3].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_baby', 1)">
                 </div>
               </div>
             </div>
@@ -92,10 +92,10 @@
               <label class="mb-2" for="banner_link">Banner 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.banner.link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="nowEDMTemplate.banner.link" placeholder="連結" @focus="focusImg('edmTable_banner', 0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.banner.imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.banner.imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_banner', 1)">
                 </div>
               </div>
             </div>
@@ -105,22 +105,38 @@
               <label class="mb-2" for="button_link">Button 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.button.link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="nowEDMTemplate.button.link" placeholder="連結" @focus="focusImg('edmTable_btn', 0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.button.imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.button.imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_btn', 1)">
                 </div>
               </div>
             </div>
+            <hr v-if="nowEDMTemplate"> 
+            <!-- product -->
+            <h2 class="h2 text-center">Product</h2>
+            <div class="form-group" v-for="(product, index) in nowEDMTemplate.product">
+              <label class="mb-2" for="product_link">Product{{index + 1}} 連結 / 圖片</label>
+              <div class="row">
+                <div class="col">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="product.link" placeholder="連結" @focus="focusImg(`edmTable_${product.id}`, 0)">
+                </div>
+                <div class="col">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="product.imgSrc" placeholder="圖片位址" @focus="focusImg(`edmTable_${product.id}`, 1)">
+                </div>
+              </div>
+            </div>
+            <hr v-if="nowEDMTemplate"> 
             <!-- footer-icon -->
-            <div v-for="footerIcon in nowEDMTemplate.footerIcon"  class="form-group">
+            <h2 class="h2 text-center">Footer</h2>
+            <div class="form-group" v-for="footerIcon in nowEDMTemplate.footerIcon">
               <label class="mb-2" for="footerIcon_link">{{footerIcon.id}} 連結 / 圖片</label>
               <div class="row">
                 <div class="col">
-                  <input type="text" v-model="footerIcon.link" class="form-control" placeholder="連結">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="footerIcon.link" placeholder="連結" @focus="focusImg(`edmTable_${footerIcon.id}`, 0)">
                 </div>
                 <div class="col">
-                  <input type="text" v-model="footerIcon.imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="footerIcon.imgSrc" placeholder="圖片位址" @focus="focusImg(`edmTable_${footerIcon.id}`, 1)">
                 </div>
               </div>
             </div>
@@ -130,38 +146,24 @@
               <label class="mb-2" for="footerContent_link">footerContent 連結 / 圖片</label>
               <div class="row">                
                 <div class="col">
-                  <input type="text" v-model="nowEDMTemplate.footerContent.imgSrc" class="form-control" placeholder="圖片位址">
-                </div>
-              </div>
-            </div>
-            <!-- layout end -->
-            <!-- custom -->
-            <!-- product -->
-            <div v-for="(product, index) in nowEDMTemplate.product" class="form-group">
-              <label class="mb-2" for="product_link">Product{{index + 1}} 連結 / 圖片</label>
-              <div class="row">
-                <div class="col">
-                  <input type="text" v-model="product.link" class="form-control" placeholder="連結">
-                </div>
-                <div class="col">
-                  <input type="text" v-model="product.imgSrc" class="form-control" placeholder="圖片位址">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="nowEDMTemplate.footerContent.imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_footer_contant', 1)">
                 </div>
               </div>
             </div>
           </form>
           <!-- Button trigger modal -->
           <div class="text-right mb-3" v-if="nowEDMTemplate">
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#createEDMCode" @click="outputEDMHtml">
+            <button class="btn btn-dark" data-target="#createEDMCode" data-toggle="modal" type="button" @click="outputEDMHtml">
               程式碼製作
             </button>
           </div>
           <!-- Modal -->
-          <div class="modal fade" id="createEDMCode" tabindex="-1" role="dialog" aria-labelledby="createEDMCodeTitle" aria-hidden="true">
+          <div class="modal fade" id="createEDMCode" role="dialog" aria-hidden="true" aria-labelledby="createEDMCodeTitle" tabindex="-1">
             <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h3 class="modal-title h3" id="createEDMCodeTitle">EDM HTML 程式碼</h3>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button class="close" data-dismiss="modal" type="button" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -169,7 +171,7 @@
                   {{oupputData}}
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
                 </div>
               </div>
             </div>
@@ -185,11 +187,11 @@
               <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                   <tr>
-                    <td>
+                    <td class="edmTable_td" id="edmTable_logo">
                       <a :href="nowEDMTemplate.logo.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="640"> -->
-                        <img v-if="!nowEDMTemplate.logo.imgSrc" :src='DefaultLayout.logo.imgSrc' alt="logo" style="vertical-align:0; display:block;" width="640">
-                        <img v-else :src='nowEDMTemplate.logo.imgSrc' alt="logo" style="vertical-align:0; display:block;" width="640">
+                        <img alt="logo" v-if="!nowEDMTemplate.logo.imgSrc" :src="DefaultLayout.logo.imgSrc" style="vertical-align:0; display:block;" width="640">
+                        <img alt="logo" v-else :src="nowEDMTemplate.logo.imgSrc" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -198,7 +200,7 @@
                       <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                         <tbody>
                           <tr>
-                            <td v-for="(menu, index) in nowEDMTemplate.menu">
+                            <td class="edmTable_td" v-for="(menu, index) in nowEDMTemplate.menu" :id="`edmTable_${menu.id}`">
                               <a :href="menu.link" target="_blank">
                                 <img :src="menu.imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
                               </a>
@@ -214,10 +216,10 @@
               <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
                 <tbody>
                   <tr>
-                    <td>
+                    <td class="edmTable_td" id="edmTable_banner">
                       <a :href="nowEDMTemplate.link" target="_blank">
-                        <img v-if="!nowEDMTemplate.banner.imgSrc" :src="DefaultLayout.banner.imgSrc" alt="banner_1" style="vertical-align:0; display:block;" width="640">
-                        <img v-else :src="nowEDMTemplate.banner.imgSrc" alt="banner_1" style="vertical-align:0; display:block;" width="640">
+                        <img alt="banner_1" v-if="!nowEDMTemplate.banner.imgSrc" :src="DefaultLayout.banner.imgSrc" style="vertical-align:0; display:block;" width="640">
+                        <img alt="banner_1" v-else :src="nowEDMTemplate.banner.imgSrc" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -227,10 +229,10 @@
               <table width="640" align="center" cellpadding="0" cellspacing="0" border="0" v-if="nowEDMTemplate.button">
                 <tbody>
                   <tr>
-                    <td>
+                    <td class="edmTable_td" id="edmTable_btn">
                       <a href="nowEDMTemplate.button.link" target="_blank">
-                        <img v-if="!nowEDMTemplate.button.imgSrc" :src="DefaultLayout.button.imgSrc" alt="BUTTON" style="vertical-align:0; display:block;" width="640">
-                        <img v-else :src="nowEDMTemplate.button.imgSrc" alt="BUTTON" style="vertical-align:0; display:block;" width="640">
+                        <img alt="BUTTON" v-if="!nowEDMTemplate.button.imgSrc" :src="DefaultLayout.button.imgSrc" style="vertical-align:0; display:block;" width="640">
+                        <img alt="BUTTON" v-else :src="nowEDMTemplate.button.imgSrc" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -240,7 +242,7 @@
               <table width="640" align="center" cellpadding="0" cellspacing="0" border="0">
                 <tbody>                  
                   <tr v-for="(product, index) in nowEDMTemplate.product">
-                    <td>
+                    <td class="edmTable_td" :id="`edmTable_${product.id}`">
                       <a :href="product.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="640"> -->
                         <img :src="product.imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
@@ -252,16 +254,16 @@
              <!-- footer -->
              <table width="640" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td v-for="footerIcon in nowEDMTemplate.footerIcon"> 
+                <td class="edmTable_td" v-for="footerIcon in nowEDMTemplate.footerIcon" :id="`edmTable_${footerIcon.id}`"> 
                   <a :href="footerIcon.link">
                     <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
                     <img :src="footerIcon.imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
                   </a>
                 </td>
-                <td>
+                <td class="edmTable_td" id="edmTable_footer_contant">
                   <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                  <img v-if="!nowEDMTemplate.footerContent.imgSrc" :src="DefaultLayout.footerContent.imgSrc" alt="footer_content" style="vertical-align:0; display:block;" width="460">
-                  <img v-else :src="nowEDMTemplate.footerContent.imgSrc" alt="footer_content" style="vertical-align:0; display:block;" width="460">
+                  <img alt="footer_content" v-if="!nowEDMTemplate.footerContent.imgSrc" :src="DefaultLayout.footerContent.imgSrc" style="vertical-align:0; display:block;" width="460">
+                  <img alt="footer_content" v-else :src="nowEDMTemplate.footerContent.imgSrc" style="vertical-align:0; display:block;" width="460">
                 </td>
               </tr>
             </table>

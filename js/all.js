@@ -1,29 +1,4 @@
-// var EDMinput = {
-// 	data: function () {
-//     return {
-      
-//     }
-// 	},
-// 	props: [
-// 		'id',
-// 		'title',
-// 		'link',
-// 		'img',
-// 	],
-// 	template: `
-// 	<div class="form-group">
-// 		<label class="mb-2" for="${id}">${title}</label>
-// 		<div class="row">
-// 			<div class="col">
-// 				<input type="text" v-model="${link}" class="form-control" placeholder="${title}">
-// 			</div>
-// 			<div class="col">
-// 				<slot></slot>
-// 			</div>
-// 		</div>
-// 	</div>
-// 	`,
-// };
+
 
 var app = new Vue({
 	el: '#app',
@@ -160,31 +135,31 @@ var app = new Vue({
 						alt: 'product03',
 					},
 					{
-						id: 'pd_1',
+						id: 'pd_4',
 						link: '#',
 						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
 						alt: 'product04',						
 					},
 					{
-						id: 'pd_1',
+						id: 'pd_5',
 						link: '#',
 						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
 						alt: 'product05',						
 					},
 					{
-						id: 'pd_1',
+						id: 'pd_6',
 						link: '#',
 						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
 						alt: 'product06',						
 					},
 					{
-						id: 'pd_1',
+						id: 'pd_7',
 						link: '#',
 						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
 						alt: 'product07',						
 					},
 					{
-						id: 'pd_1',
+						id: 'pd_8',
 						link: '#',
 						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
 						alt: 'product08',						
@@ -299,6 +274,7 @@ var app = new Vue({
 			`2版`,
 		],
 		oupputData: '',
+		isFoucs: false,
 	},
 	methods: {
 		choose(value) {
@@ -312,14 +288,33 @@ var app = new Vue({
 			const preview = document.getElementById('preview');
 			this.oupputData = preview.firstChild.outerHTML;
 		},
+		focusImg(id, i) {
+			const edmTable_td = document.querySelectorAll('.edmTable_td');
+			const target = document.getElementById(id);
+			edmTable_td.forEach((item) => {
+				item.classList.remove('l-targetFocus_link', 'l-targetFocus_img');
+			})
+			switch(i){
+				case 0 :			
+					console.log(target);
+					target.classList.add('l-targetFocus_link');
+					break;
+				case 1 : 			
+					console.log(target);		
+					target.classList.add('l-targetFocus_img');
+					break;
+			}
+		},
+		blurImg(){
+			const edmTable_td = document.querySelectorAll('.edmTable_td');
+			edmTable_td.forEach((item) => {
+				item.classList.remove('l-targetFocus_img', 'l-targetFocus_link');
+			})
+		}
 	},
 	computed: {
 		toNumber() {
 			this.nowEDMTemplateIndex = parseInt(this.nowEDMTemplateIndex);
-		},
-		refresh() {
-			const edmInput = document.getElementById('edmInput');
-
 		},
 	},
 
