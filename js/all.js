@@ -46,22 +46,67 @@ var app = new Vue({
 					imgSrc:'https://fakeimg.pl/640x150/f00d30/000?text=BUTTON',
 					link:'#',						
 				},
-				product:[{
-						imgSrc:'',
-						link:'',
-						alt:''
-				}],
+				product: [
+					{
+						id: 'pd_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product01',						
+					},
+					{
+						id: 'pd_2',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product02',						
+					},
+					{
+						id: 'pd_3',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product03',
+					},
+					{
+						id: 'pd_4',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product04',						
+					},
+					{
+						id: 'pd_5',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product05',						
+					},
+					{
+						id: 'pd_6',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product06',						
+					},
+					{
+						id: 'pd_7',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product07',						
+					},
+					{
+						id: 'pd_8',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						alt: 'product08',						
+					}
+				],
 				footer:{
 						fb:{
-								imgSrc:'',
+								imgSrc:'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
 								link:''
 						},
 						ig:{
-								imgSrc:'',
+								imgSrc:'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
 								link:''
 						},
 						line:{
-								imgSrc:'',
+								imgSrc:'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
 								link:''
 						}
 				},
@@ -73,6 +118,7 @@ var app = new Vue({
 
 		EDMtemplate: [
 			{
+				title: '有 Button',
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com/',
@@ -192,6 +238,7 @@ var app = new Vue({
 				}
 			},
 			{
+				title: '無 Button',
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com/',

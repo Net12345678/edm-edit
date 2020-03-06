@@ -17,7 +17,7 @@
           <div class="input-group">
             <select class="custom-select" id="chooseEdmTemplate" aria-label="choose EDM Template" v-model="chooseTtmplate">
               <option selected disabled>請選擇版型...</option>
-              <option v-for="(item, key) in EDMtemplate" :value="key">{{key+1}}</option>
+              <option v-for="(item, key) in EDMtemplate" :value="key">{{ item.title }}</option>
             </select>
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button" @click="choose(chooseTtmplate)">送出</button>
@@ -206,7 +206,8 @@
                           <tr>
                             <td class="edmTable_td" v-for="(menu, index) in nowEDMTemplate.menu" :id="`edmTable_${menu.id}`">
                               <a :href="menu.link" target="_blank">
-                                <img :src="menu.imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
+                                <img v-if="!menu.imgSrc" :src="DefaultLayout.menu[index].imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
+                                <img v-else :src="menu.imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
                               </a>
                             </td>
                           </tr>
@@ -249,7 +250,8 @@
                     <td class="edmTable_td" :id="`edmTable_${product.id}`">
                       <a :href="product.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="640"> -->
-                        <img :src="product.imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
+                        <img v-if="!product.imgSrc" :src="DefaultLayout.product[index].imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
+                        <img v-else :src="product.imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -258,10 +260,11 @@
              <!-- footer -->
              <table width="640" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td class="edmTable_td" v-for="footerIcon in nowEDMTemplate.footerIcon" :id="`edmTable_${footerIcon.id}`"> 
+                <td class="edmTable_td" v-for="(footerIcon, key) in nowEDMTemplate.footerIcon" :id="`edmTable_${footerIcon.id}`"> 
                   <a :href="footerIcon.link">
                     <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                    <img :src="footerIcon.imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
+                    <img v-if="!footerIcon.imgSrc" :src="DefaultLayout.footer[key].imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
+                    <img v-else :src="footerIcon.imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
                   </a>
                 </td>
                 <td class="edmTable_td" id="edmTable_footer_contant">
