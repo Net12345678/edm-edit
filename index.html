@@ -102,7 +102,7 @@
                 </div>
               </div>
             </div>
-            <hr v-if="EDMtemplate"> 
+            <hr> 
             <!-- product -->
             <h2 class="h2 text-center">Product</h2>
             <div class="form-group" v-for="(product, index) in EDMtemplate.product">
@@ -116,7 +116,7 @@
                 </div>
               </div>
             </div>
-            <hr v-if="EDMtemplate"> 
+            <hr> 
             <!-- footer-icon -->
             <h2 class="h2 text-center">Footer</h2>
             <div class="form-group" v-for="footerIcon in EDMtemplate.footerIcon">
@@ -190,8 +190,7 @@
                           <tr>
                             <td class="edmTable_td" v-for="(menu, index) in EDMtemplate.menu" :id="`edmTable_${menu.id}`">
                               <a :href="menu.link" target="_blank">
-                                <img v-if="!menu.imgSrc" :src="DefaultLayout.menu[index].imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
-                                <img v-else :src="menu.imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
+                                <img :src="EDMtemplate.menu[index].imgSrc || DefaultLayout.menu[index].imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
                               </a>
                             </td>
                           </tr>
@@ -207,8 +206,7 @@
                   <tr>
                     <td class="edmTable_td" id="edmTable_banner">
                       <a :href="EDMtemplate.banner.link" target="_blank">
-                        <img alt="banner_1" v-if="!EDMtemplate.banner.imgSrc" :src="DefaultLayout.banner.imgSrc" style="vertical-align:0; display:block;" width="640">
-                        <img alt="banner_1" v-else :src="EDMtemplate.banner.imgSrc" style="vertical-align:0; display:block;" width="640">
+                        <img alt="banner_1" :src="EDMtemplate.banner.imgSrc || DefaultLayout.banner.imgSrc" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -220,8 +218,7 @@
                   <tr>
                     <td class="edmTable_td" id="edmTable_btn">
                       <a :href="EDMtemplate.button.link" target="_blank">
-                        <img alt="BUTTON" v-if="!EDMtemplate.button.imgSrc" :src="DefaultLayout.button.imgSrc" style="vertical-align:0; display:block;" width="640">
-                        <img alt="BUTTON" v-else :src="EDMtemplate.button.imgSrc" style="vertical-align:0; display:block;" width="640">
+                        <img alt="BUTTON" :src="EDMtemplate.button.imgSrc || DefaultLayout.button.imgSrc" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -234,8 +231,7 @@
                     <td class="edmTable_td" :id="`edmTable_${product.id}`">
                       <a :href="product.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="640"> -->
-                        <img v-if="!product.imgSrc" :src="DefaultLayout.product[index].imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
-                        <img v-else :src="product.imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
+                        <img :src="product.imgSrc || DefaultLayout.product[index].imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
@@ -247,14 +243,12 @@
                 <td class="edmTable_td" v-for="(footerIcon, key) in EDMtemplate.footerIcon" :id="`edmTable_${footerIcon.id}`"> 
                   <a :href="footerIcon.link">
                     <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                    <img v-if="!footerIcon.imgSrc" :src="DefaultLayout.footer[key].imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
-                    <img v-else :src="footerIcon.imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
+                    <img :src="footerIcon.imgSrc || DefaultLayout.footer[key].imgSrc" :alt="footerIcon.alt" style="vertical-align:0; display:block;" width="60">
                   </a>
                 </td>
                 <td class="edmTable_td" id="edmTable_footer_contant">
                   <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="640"> -->
-                  <img alt="footer_content" v-if="!EDMtemplate.footerContent.imgSrc" :src="DefaultLayout.footerContent.imgSrc" style="vertical-align:0; display:block;" width="460">
-                  <img alt="footer_content" v-else :src="EDMtemplate.footerContent.imgSrc" style="vertical-align:0; display:block;" width="460">
+                  <img alt="footer_content" :src="EDMtemplate.footerContent.imgSrc || DefaultLayout.footerContent.imgSrc" style="vertical-align:0; display:block;" width="460">
                 </td>
               </tr>
             </table>
