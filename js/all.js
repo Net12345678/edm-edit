@@ -116,9 +116,8 @@ var app = new Vue({
 				}
 		},
 
-		EDMtemplate: [
-			{
-				title: '有 Button',
+		EDMtemplate:
+			{				
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com/',
@@ -237,142 +236,16 @@ var app = new Vue({
 					imgSrc: '',
 				}
 			},
-			{
-				title: '無 Button',
-				logo: {
-					id: 'logo',
-					link: 'https://www.nuvfashion.com/',
-					imgSrc: '',
-				},
-				menu: [
-					{
-						id: 'women',
-						link: '',
-						imgSrc: '',
-						alt:'women',
-						width: '200'
-					},
-					{
-						id: 'men',
-						link: '',
-						imgSrc: '',
-						alt:'men',
-						width: '120'
-					},
-					{
-						id: 'kids',
-						link: '',
-						imgSrc: '',
-						alt:'kids',
-						width: '145'
-					},
-					{
-						id: 'baby',
-						link: '',
-						imgSrc: '',
-						alt:'baby',
-						width: '175'
-					}
-				],
-				banner: {
-					id: 'banner',
-					link: '',
-					imgSrc: '',
-				},
-				button:'',
-				product: [
-					{
-						id: 'pd_1',
-						link: '',
-						imgSrc: '',
-						alt: 'product01',						
-					},
-					{
-						id: 'pd_2',
-						link: '',
-						imgSrc: '',
-						alt: 'product02',						
-					},
-					{
-						id: 'pd_3',
-						link: '',
-						imgSrc: '',
-						alt: 'product03',
-					},
-					{
-						id: 'pd_4',
-						link: '',
-						imgSrc: '',
-						alt: 'product04',						
-					},
-					{
-						id: 'pd_5',
-						link: '',
-						imgSrc: '',
-						alt: 'product05',						
-					},
-					{
-						id: 'pd_6',
-						link: '',
-						imgSrc: '',
-						alt: 'product06',						
-					},
-					{
-						id: 'pd_7',
-						link: '',
-						imgSrc: '',
-						alt: 'product07',						
-					},
-					{
-						id: 'pd_8',
-						link: '',
-						imgSrc: '',
-						alt: 'product08',						
-					}
-				],
-				footerIcon: {
-					fb: {
-						id: 'fb',
-						link: '',
-						imgSrc: '',
-						alt: 'facebook',
-					},
-					ig: {
-						id: 'ig',
-						link: '',
-						imgSrc: '',
-						alt: 'instagram',
-					},
-					line: {
-						id: 'line',
-						link: '',
-						imgSrc: '',
-						alt: 'line',
-					}					
-				},
-				footerContent: {
-					id: 'footerContent',
-					imgSrc: '',
-				}
-			},
-		],
-		chooseTtmplate: '請選擇版型...',
-		nowEDMTemplate: '',
-		nowEDMTemplateIndex: '',
-		EDMForm: [
-			`1版`,
-			`2版`,
-		],
 		oupputData: '',
 	},
 	methods: {
-		choose(value) {
-			if( typeof(value) !== 'number' ){ 
-				return;
-			};
-			this.nowEDMTemplate = this.EDMtemplate[value];
-			this.nowEDMTemplateIndex = value;
-		},
+		// choose(value) {
+		// 	if( typeof(value) !== 'number' ){ 
+		// 		return;
+		// 	};
+		// 	this.nowEDMTemplate = this.EDMtemplate[value];
+		// 	this.nowEDMTemplateIndex = value;
+		// },
 		outputEDMHtml() {
 			const preview = document.getElementById('preview');
 			this.oupputData = preview.firstChild.outerHTML;
