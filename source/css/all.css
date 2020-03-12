@@ -63,6 +63,10 @@ hr {
           box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.3);
 }
 
+.l-home_wrap {
+  height: 100vh;
+}
+
 .l-aside_form {
   border-width: 2px !important;
 }
