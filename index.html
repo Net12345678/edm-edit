@@ -194,8 +194,7 @@
                     <td class="edmTable_td" id="edmTable_logo">
                       <a :href="nowEDMTemplate.logo.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="640"> -->
-                        <img alt="logo" v-if="!nowEDMTemplate.logo.imgSrc" :src="DefaultLayout.logo.imgSrc" style="vertical-align:0; display:block;" width="640">
-                        <img alt="logo" v-else :src="nowEDMTemplate.logo.imgSrc" style="vertical-align:0; display:block;" width="640">
+                        <img alt="logo" :src="nowEDMTemplate.logo.imgSrc || DefaultLayout.logo.imgSrc" style="vertical-align:0; display:block;" width="640">
                       </a>
                     </td>
                   </tr>
