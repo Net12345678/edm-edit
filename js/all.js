@@ -13,30 +13,30 @@ var app = new Vue({
 					{
 						id: 'women',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/200x88/ffffff/000?text=WOMEN',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=WOMEN',
 						alt: 'women',
-						width: '200'
+						width: '162.5'
 					},
 					{
 						id: 'men',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/120x88/ffffff/000?text=MEN',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=MEN',
 						alt: 'men',
-						width: '120'
+						width: '162.5'
 					},
 					{
 						id: 'kids',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/145x88/ffffff/000?text=KIDS',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=KIDS',
 						alt: 'kids',
-						width: '145'
+						width: '162.5'
 					},
 					{
 						id: 'baby',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/175x88/ffffff/000?text=BABY',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=BABY',
 						alt: 'baby',
-						width: '175'
+						width: '162.5'
 					}
 				],
 				banner: {
@@ -125,30 +125,30 @@ var app = new Vue({
 					{
 						id: 'women',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/200x88/ffffff/000?text=WOMEN',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=WOMEN',
 						alt: 'women',
-						width: '200'
+						width: '162.5'
 					},
 					{
 						id: 'men',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/120x88/ffffff/000?text=MEN',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=MEN',
 						alt: 'men',
-						width: '120'
+						width: '162.5'
 					},
 					{
 						id: 'kids',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/145x88/ffffff/000?text=KIDS',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=KIDS',
 						alt: 'kids',
-						width: '145'
+						width: '162.5'
 					},
 					{
 						id: 'baby',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/175x88/ffffff/000?text=BABY',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=BABY',
 						alt: 'baby',
-						width: '175'
+						width: '162.5'
 					}
 				],
 				banner: {
@@ -241,30 +241,30 @@ var app = new Vue({
 					{
 						id: 'women',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/200x88/ffffff/000?text=WOMEN',
+						imgSrc: 'https://fakeimg.pl/163x88/ffffff/000?text=WOMEN',
 						alt: 'women',
-						width: '200'
+						width: '162.5'
 					},
 					{
 						id: 'men',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/120x88/ffffff/000?text=MEN',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=MEN',
 						alt: 'men',
-						width: '120'
+						width: '162.5'
 					},
 					{
 						id: 'kids',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/145x88/ffffff/000?text=KIDS',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=KIDS',
 						alt: 'kids',
-						width: '145'
+						width: '162.5'
 					},
 					{
 						id: 'baby',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/175x88/ffffff/000?text=BABY',
+						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=BABY',
 						alt: 'baby',
-						width: '175'
+						width: '162.5'
 					}
 				],
 				banner: {
@@ -359,28 +359,28 @@ var app = new Vue({
 					link: '',
 					imgSrc: '',
 					alt: 'women',
-					width: '200'
+					width: '162.5'
 				},
 				{
 					id: 'men',
 					link: '',
 					imgSrc: '',
 					alt: 'men',
-					width: '120'
+					width: '162.5'
 				},
 				{
 					id: 'kids',
 					link: '',
 					imgSrc: '',
 					alt: 'kids',
-					width: '145'
+					width: '162.5'
 				},
 				{
 					id: 'baby',
 					link: '',
 					imgSrc: '',
 					alt: 'baby',
-					width: '175'
+					width: '162.5'
 				}
 				],
 				banner: {
@@ -478,28 +478,28 @@ var app = new Vue({
 					link: '',
 					imgSrc: '',
 					alt: 'women',
-					width: '200'
+					width: '162.5'
 				},
 				{
 					id: 'men',
 					link: '',
 					imgSrc: '',
 					alt: 'men',
-					width: '120'
+					width: '162.5'
 				},
 				{
 					id: 'kids',
 					link: '',
 					imgSrc: '',
 					alt: 'kids',
-					width: '145'
+					width: '162.5'
 				},
 				{
 					id: 'baby',
 					link: '',
 					imgSrc: '',
 					alt: 'baby',
-					width: '175'
+					width: '162.5'
 				}
 				],
 				banner: {
@@ -601,28 +601,28 @@ var app = new Vue({
 					link: '',
 					imgSrc: '',
 					alt: 'women',
-					width: '200'
+					width: '162.5'
 				},
 				{
 					id: 'men',
 					link: '',
 					imgSrc: '',
 					alt: 'men',
-					width: '120'
+					width: '162.5'
 				},
 				{
 					id: 'kids',
 					link: '',
 					imgSrc: '',
 					alt: 'kids',
-					width: '145'
+					width: '162.5'
 				},
 				{
 					id: 'baby',
 					link: '',
 					imgSrc: '',
 					alt: 'baby',
-					width: '175'
+					width: '162.5'
 				}
 				],
 				banner: {
