@@ -3,10 +3,11 @@
 var app = new Vue({
 	el: '#app',
 	data: {
-		DefaultLayout:{
-				logo:{
-						imgSrc:'https://fakeimg.pl/640x98/ff548f/000?text=LOGO(640x98)',
-						link:'#',
+		DefaultLayout: [
+			{
+				logo: {
+					imgSrc: 'https://fakeimg.pl/650x98/ff548f/000?text=LOGO(650x98)',
+					link: '#',
 				},
 				menu: [
 					{
@@ -38,86 +39,316 @@ var app = new Vue({
 						width: '175'
 					}
 				],
-				banner:{
-					imgSrc:'https://fakeimg.pl/640x600/ff45f9/000?text=BANNER',
-					link:'#',						
+				banner: {
+					imgSrc: 'https://fakeimg.pl/650x600/ff45f9/000?text=BANNER',
+					link: '#',
 				},
-				button:{
-					imgSrc:'https://fakeimg.pl/640x150/f00d30/000?text=BUTTON',
-					link:'#',						
+				button: {
+					imgSrc: 'https://fakeimg.pl/650x150/f00d30/000?text=BUTTON',
+					link: '#',
 				},
 				product: [
 					{
 						id: 'pd_1',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
-						alt: 'product01',						
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'product01',
 					},
 					{
 						id: 'pd_2',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
-						alt: 'product02',						
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'product02',
 					},
 					{
 						id: 'pd_3',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product03',
 					},
 					{
 						id: 'pd_4',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
-						alt: 'product04',						
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'product04',
 					},
 					{
 						id: 'pd_5',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
-						alt: 'product05',						
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'product05',
 					},
 					{
 						id: 'pd_6',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
-						alt: 'product06',						
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'product06',
 					},
 					{
 						id: 'pd_7',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
-						alt: 'product07',						
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'product07',
 					},
 					{
 						id: 'pd_8',
 						link: '#',
-						imgSrc: 'https://fakeimg.pl/640x859/00154d?text=product',
-						alt: 'product08',						
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'product08',
 					}
 				],
-				footer:{
-						fb:{
-								imgSrc:'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
-								link:''
-						},
-						ig:{
-								imgSrc:'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
-								link:''
-						},
-						line:{
-								imgSrc:'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
-								link:''
-						}
+				footer: {
+					fb: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
+						link: ''
+					},
+					ig: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
+						link: ''
+					},
+					line: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
+						link: ''
+					}
 				},
 				footerContent: {
 					id: 'footerContent',
-					imgSrc: 'https://fakeimg.pl/460x158/000000/fff?text=footer-content(460x158)',
+					imgSrc: 'https://fakeimg.pl/470x158/000000/fff?text=footer-content(470x158)',
 				}
-		},
-
-		EDMtemplate:
-			{				
+			},
+			{
+				logo: {
+					imgSrc: 'https://fakeimg.pl/650x98/ff548f/000?text=LOGO(650x98)',
+					link: '#',
+				},
+				menu: [
+					{
+						id: 'women',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/200x88/ffffff/000?text=WOMEN',
+						alt: 'women',
+						width: '200'
+					},
+					{
+						id: 'men',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/120x88/ffffff/000?text=MEN',
+						alt: 'men',
+						width: '120'
+					},
+					{
+						id: 'kids',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/145x88/ffffff/000?text=KIDS',
+						alt: 'kids',
+						width: '145'
+					},
+					{
+						id: 'baby',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/175x88/ffffff/000?text=BABY',
+						alt: 'baby',
+						width: '175'
+					}
+				],
+				banner: {
+					imgSrc: 'https://fakeimg.pl/650x600/ff45f9/000?text=BANNER',
+					link: '#',
+				},
+				button: {
+					imgSrc: 'https://fakeimg.pl/650x150/f00d30/000?text=BUTTON',
+					link: '#',
+				},
+				productS: [
+					{
+						id: 'pds_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'pds_1',
+					},
+					{
+						id: 'pds_2',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
+						alt: 'pds_2',
+					},
+				],
+				productL: [
+					{
+						id: 'pdL_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
+						alt: 'pdL_1',
+					},
+					{
+						id: 'pdL_2',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/533655/000?text=MEN-left',
+						alt: 'pdL_2',
+					},
+					{
+						id: 'pdL_3',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/3dff00/000?text=MEN-left',
+						alt: 'pdL_3',
+					},
+				],
+				productR: [
+					{
+						id: 'pdr_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
+						alt: 'pdr_1',
+					},
+					{
+						id: 'pdr_2',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/5995d3/000?text=MEN-right',
+						alt: 'pdr_2',
+					},
+					{
+						id: 'pdr_3',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/669d3d/000?text=MEN-right',
+						alt: 'pdr_3',
+					},
+				],
+				footer: {
+					fb: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
+						link: ''
+					},
+					ig: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
+						link: ''
+					},
+					line: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
+						link: ''
+					}
+				},
+				footerContent: {
+					id: 'footerContent',
+					imgSrc: 'https://fakeimg.pl/470x158/000000/fff?text=footer-content(470x158)',
+				}
+			},
+			{
+				logo: {
+					imgSrc: 'https://fakeimg.pl/650x98/ff548f/000?text=LOGO(650x98)',
+					link: '#',
+				},
+				menu: [
+					{
+						id: 'women',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/200x88/ffffff/000?text=WOMEN',
+						alt: 'women',
+						width: '200'
+					},
+					{
+						id: 'men',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/120x88/ffffff/000?text=MEN',
+						alt: 'men',
+						width: '120'
+					},
+					{
+						id: 'kids',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/145x88/ffffff/000?text=KIDS',
+						alt: 'kids',
+						width: '145'
+					},
+					{
+						id: 'baby',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/175x88/ffffff/000?text=BABY',
+						alt: 'baby',
+						width: '175'
+					}
+				],
+				banner: {
+					imgSrc: 'https://fakeimg.pl/650x600/ff45f9/000?text=BANNER',
+					link: '#',
+				},
+				button: {
+					imgSrc: 'https://fakeimg.pl/650x150/f00d30/000?text=BUTTON',
+					link: '#',
+				},
+				productL: [
+					{
+						id: 'pdL_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
+						alt: 'pdL_1',
+					},
+					{
+						id: 'pdL_2',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/533655/000?text=MEN-left',
+						alt: 'pdL_2',
+					},
+					{
+						id: 'pdL_3',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/3dff00/000?text=MEN-left',
+						alt: 'pdL_3',
+					},
+					{
+						id: 'pdL_4',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/3d6d00/000?text=MEN-left',
+						alt: 'pdL_4',
+					},
+				],
+				productR: [
+					{
+						id: 'pdr_1',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
+						alt: 'pdr_1',
+					},
+					{
+						id: 'pdr_2',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/5995d3/000?text=MEN-right',
+						alt: 'pdr_2',
+					},
+					{
+						id: 'pdr_3',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/669d3d/000?text=MEN-right',
+						alt: 'pdr_3',
+					},
+					{
+						id: 'pdr_4',
+						link: '#',
+						imgSrc: 'https://fakeimg.pl/325x872/3d99d0/000?text=MEN-right',
+						alt: 'pdr_4',
+					},
+				],
+				footer: {
+					fb: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
+						link: ''
+					},
+					ig: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
+						link: ''
+					},
+					line: {
+						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
+						link: ''
+					}
+				},
+				footerContent: {
+					id: 'footerContent',
+					imgSrc: 'https://fakeimg.pl/470x158/000000/fff?text=footer-content(470x158)',
+				}
+			},
+		],
+		EDMtemplate: [
+			{
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com/',
@@ -127,28 +358,28 @@ var app = new Vue({
 					id: 'women',
 					link: '',
 					imgSrc: '',
-					alt:'women',
+					alt: 'women',
 					width: '200'
 				},
 				{
 					id: 'men',
 					link: '',
 					imgSrc: '',
-					alt:'men',
+					alt: 'men',
 					width: '120'
 				},
 				{
 					id: 'kids',
 					link: '',
 					imgSrc: '',
-					alt:'kids',
+					alt: 'kids',
 					width: '145'
 				},
 				{
 					id: 'baby',
 					link: '',
 					imgSrc: '',
-					alt:'baby',
+					alt: 'baby',
 					width: '175'
 				}
 				],
@@ -157,22 +388,22 @@ var app = new Vue({
 					link: '',
 					imgSrc: '',
 				},
-				button:{
-					link:'',
-					imgSrc:'',						
+				button: {
+					link: '',
+					imgSrc: '',
 				},
 				product: [
 					{
 						id: 'pd_1',
 						link: '',
 						imgSrc: '',
-						alt: 'product01',						
+						alt: 'product01',
 					},
 					{
 						id: 'pd_2',
 						link: '',
 						imgSrc: '',
-						alt: 'product02',						
+						alt: 'product02',
 					},
 					{
 						id: 'pd_3',
@@ -184,31 +415,31 @@ var app = new Vue({
 						id: 'pd_4',
 						link: '',
 						imgSrc: '',
-						alt: 'product04',						
+						alt: 'product04',
 					},
 					{
 						id: 'pd_5',
 						link: '',
 						imgSrc: '',
-						alt: 'product05',						
+						alt: 'product05',
 					},
 					{
 						id: 'pd_6',
 						link: '',
 						imgSrc: '',
-						alt: 'product06',						
+						alt: 'product06',
 					},
 					{
 						id: 'pd_7',
 						link: '',
 						imgSrc: '',
-						alt: 'product07',						
+						alt: 'product07',
 					},
 					{
 						id: 'pd_8',
 						link: '',
 						imgSrc: '',
-						alt: 'product08',						
+						alt: 'product08',
 					}
 				],
 				footerIcon: {
@@ -229,23 +460,262 @@ var app = new Vue({
 						link: '',
 						imgSrc: '',
 						alt: 'line',
-					}					
+					}
 				},
 				footerContent: {
 					id: 'footerContent',
 					imgSrc: '',
 				}
 			},
+			{
+				logo: {
+					id: 'logo',
+					link: 'https://www.nuvfashion.com/',
+					imgSrc: '',
+				},
+				menu: [{
+					id: 'women',
+					link: '',
+					imgSrc: '',
+					alt: 'women',
+					width: '200'
+				},
+				{
+					id: 'men',
+					link: '',
+					imgSrc: '',
+					alt: 'men',
+					width: '120'
+				},
+				{
+					id: 'kids',
+					link: '',
+					imgSrc: '',
+					alt: 'kids',
+					width: '145'
+				},
+				{
+					id: 'baby',
+					link: '',
+					imgSrc: '',
+					alt: 'baby',
+					width: '175'
+				}
+				],
+				banner: {
+					id: 'banner',
+					link: '',
+					imgSrc: '',
+				},
+				button: {
+					link: '',
+					imgSrc: '',
+				},
+				productS: [
+					{
+						id: 'pds_1',
+						link: '',
+						imgSrc: '',
+						alt: 'product01',
+					},
+					{
+						id: 'pds_2',
+						link: '',
+						imgSrc: '',
+						alt: 'product02',
+					},
+				],
+				productL: [
+					{
+						id: 'pdl_1',
+						link: '',
+						imgSrc: '',
+						alt: 'product01_L',
+					},
+					{
+						id: 'pdl_2',
+						link: '',
+						imgSrc: '',
+						alt: 'product02_L',
+					},
+					{
+						id: 'pdl_3',
+						link: '',
+						imgSrc: '',
+						alt: 'product03_L',
+					},
+				],
+				productR: [
+					{
+						id: 'pdr_1',
+						link: '',
+						imgSrc: '',
+						alt: 'product01_R',
+					},
+					{
+						id: 'pdr_2',
+						link: '',
+						imgSrc: '',
+						alt: 'product02_R',
+					},
+					{
+						id: 'pdr_3',
+						link: '',
+						imgSrc: '',
+						alt: 'product03_R',
+					},
+				],
+				footerIcon: {
+					fb: {
+						id: 'fb',
+						link: '',
+						imgSrc: '',
+						alt: 'facebook',
+					},
+					ig: {
+						id: 'ig',
+						link: '',
+						imgSrc: '',
+						alt: 'instagram',
+					},
+					line: {
+						id: 'line',
+						link: '',
+						imgSrc: '',
+						alt: 'line',
+					}
+				},
+				footerContent: {
+					id: 'footerContent',
+					imgSrc: '',
+				}
+			},
+			{
+				logo: {
+					id: 'logo',
+					link: 'https://www.nuvfashion.com/',
+					imgSrc: '',
+				},
+				menu: [{
+					id: 'women',
+					link: '',
+					imgSrc: '',
+					alt: 'women',
+					width: '200'
+				},
+				{
+					id: 'men',
+					link: '',
+					imgSrc: '',
+					alt: 'men',
+					width: '120'
+				},
+				{
+					id: 'kids',
+					link: '',
+					imgSrc: '',
+					alt: 'kids',
+					width: '145'
+				},
+				{
+					id: 'baby',
+					link: '',
+					imgSrc: '',
+					alt: 'baby',
+					width: '175'
+				}
+				],
+				banner: {
+					id: 'banner',
+					link: '',
+					imgSrc: '',
+				},
+				button: {
+					link: '',
+					imgSrc: '',
+				},
+				productL: [
+					{
+						id: 'pdl_1',
+						link: '',
+						imgSrc: '',
+						alt: 'product01_L',
+					},
+					{
+						id: 'pdl_2',
+						link: '',
+						imgSrc: '',
+						alt: 'product02_L',
+					},
+					{
+						id: 'pdl_3',
+						link: '',
+						imgSrc: '',
+						alt: 'product03_L',
+					},
+					{
+						id: 'pdl_4',
+						link: '',
+						imgSrc: '',
+						alt: 'product04_L',
+					},
+				],
+				productR: [
+					{
+						id: 'pdr_1',
+						link: '',
+						imgSrc: '',
+						alt: 'product01_R',
+					},
+					{
+						id: 'pdr_2',
+						link: '',
+						imgSrc: '',
+						alt: 'product02_R',
+					},
+					{
+						id: 'pdr_3',
+						link: '',
+						imgSrc: '',
+						alt: 'product03_R',
+					},
+					{
+						id: 'pdr_4',
+						link: '',
+						imgSrc: '',
+						alt: 'product04_R',
+					},
+				],
+				footerIcon: {
+					fb: {
+						id: 'fb',
+						link: '',
+						imgSrc: '',
+						alt: 'facebook',
+					},
+					ig: {
+						id: 'ig',
+						link: '',
+						imgSrc: '',
+						alt: 'instagram',
+					},
+					line: {
+						id: 'line',
+						link: '',
+						imgSrc: '',
+						alt: 'line',
+					}
+				},
+				footerContent: {
+					id: 'footerContent',
+					imgSrc: '',
+				}
+			},
+		],
 		oupputData: '',
+		isOpenNav: false,
 	},
 	methods: {
-		// choose(value) {
-		// 	if( typeof(value) !== 'number' ){ 
-		// 		return;
-		// 	};
-		// 	this.nowEDMTemplate = this.EDMtemplate[value];
-		// 	this.nowEDMTemplateIndex = value;
-		// },
 		outputEDMHtml() {
 			const preview = document.getElementById('preview');
 			this.oupputData = preview.firstChild.outerHTML;
@@ -256,22 +726,28 @@ var app = new Vue({
 			edmTable_td.forEach((item) => {
 				item.classList.remove('l-targetFocus_link', 'l-targetFocus_img');
 			})
-			switch(i){
-				case 0 :			
+			switch (i) {
+				case 0:
 					console.log(target);
 					target.classList.add('l-targetFocus_link');
 					break;
-				case 1 : 			
-					console.log(target);		
+				case 1:
+					console.log(target);
 					target.classList.add('l-targetFocus_img');
 					break;
 			}
 		},
-		blurImg(){
+		blurImg() {
 			const edmTable_td = document.querySelectorAll('.edmTable_td');
 			edmTable_td.forEach((item) => {
 				item.classList.remove('l-targetFocus_img', 'l-targetFocus_link');
 			})
+		},
+		openNav() {
+			
+		},
+		closeNav() {
+
 		}
 	},
 	computed: {
