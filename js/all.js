@@ -6,7 +6,7 @@ var app = new Vue({
 		DefaultLayout: [
 			{
 				logo: {
-					imgSrc: 'https://fakeimg.pl/650x98/ff548f/000?text=LOGO(650x98)',
+					imgSrc: 'https://fakeimg.pl/650x98/ff998f/000?text=LOGO(650x98)',
 					link: '#',
 				},
 				menu: [
@@ -44,7 +44,7 @@ var app = new Vue({
 					link: '#',
 				},
 				button: {
-					imgSrc: 'https://fakeimg.pl/650x150/f00d30/000?text=BUTTON',
+					imgSrc: 'https://fakeimg.pl/650x150/f9903d/000?text=BUTTON',
 					link: '#',
 				},
 				product: [
@@ -118,7 +118,7 @@ var app = new Vue({
 			},
 			{
 				logo: {
-					imgSrc: 'https://fakeimg.pl/650x98/ff548f/000?text=LOGO(650x98)',
+					imgSrc: 'https://fakeimg.pl/650x98/ff998f/000?text=LOGO(650x98)',
 					link: '#',
 				},
 				menu: [
@@ -156,7 +156,7 @@ var app = new Vue({
 					link: '#',
 				},
 				button: {
-					imgSrc: 'https://fakeimg.pl/650x150/f00d30/000?text=BUTTON',
+					imgSrc: 'https://fakeimg.pl/650x150/f9903d/000?text=BUTTON',
 					link: '#',
 				},
 				productS: [
@@ -234,7 +234,7 @@ var app = new Vue({
 			},
 			{
 				logo: {
-					imgSrc: 'https://fakeimg.pl/650x98/ff548f/000?text=LOGO(650x98)',
+					imgSrc: 'https://fakeimg.pl/650x98/ff998f/000?text=LOGO(650x98)',
 					link: '#',
 				},
 				menu: [
@@ -272,7 +272,7 @@ var app = new Vue({
 					link: '#',
 				},
 				button: {
-					imgSrc: 'https://fakeimg.pl/650x150/f00d30/000?text=BUTTON',
+					imgSrc: 'https://fakeimg.pl/650x150/f9903d/000?text=BUTTON',
 					link: '#',
 				},
 				productL: [
