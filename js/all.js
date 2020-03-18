@@ -738,7 +738,7 @@ var app = new Vue({
 			}
 		},
 		blurImg() {
-			const edmTable_td = document.querySelectorAll('.edmTable_td');
+			const edmTable_td = document.querySelectorAll('.edmTable_td img');
 			edmTable_td.forEach((item) => {
 				item.classList.remove('l-targetFocus_img', 'l-targetFocus_link');
 			})

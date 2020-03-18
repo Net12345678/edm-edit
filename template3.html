@@ -312,10 +312,10 @@
                 <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
                   <tbody>
                     <tr>
-                      <td class="edmTable_td" id="edmTable_logo">
+                      <td class="edmTable_td">
                         <a :href="EDMtemplate[2].logo.link" target="_blank">
                           <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="650"> -->
-                          <img alt="logo" :src="EDMtemplate[2].logo.imgSrc || DefaultLayout[2].logo.imgSrc"
+                          <img id="edmTable_logo" alt="logo" :src="EDMtemplate[2].logo.imgSrc || DefaultLayout[2].logo.imgSrc"
                             style="vertical-align:0; display:block;" width="650">
                         </a>
                       </td>
@@ -325,10 +325,9 @@
                         <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tbody>
                             <tr>
-                              <td class="edmTable_td" v-for="(menu, index) in EDMtemplate[2].menu"
-                                :id="`edmTable_${menu.id}`">
+                              <td class="edmTable_td" v-for="(menu, index) in EDMtemplate[2].menu">
                                 <a :href="menu.link" target="_blank">
-                                  <img :src="EDMtemplate[2].menu[index].imgSrc || DefaultLayout[2].menu[index].imgSrc"
+                                  <img :id="`edmTable_${menu.id}`" :src="EDMtemplate[2].menu[index].imgSrc || DefaultLayout[2].menu[index].imgSrc"
                                     :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width"
                                     border="0">
                                 </a>
@@ -349,18 +348,18 @@
                         <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tbody>
                             <tr>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productL[0].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productL[0].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :src="EDMtemplate[2].productL[0].imgSrc || DefaultLayout[2].productL[0].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productL[0].id}`" :src="EDMtemplate[2].productL[0].imgSrc || DefaultLayout[2].productL[0].imgSrc"
                                     :alt="EDMtemplate[2].productL[0].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
                               </td>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productR[0].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productR[0].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :src="EDMtemplate[2].productR[0].imgSrc || DefaultLayout[2].productR[0].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productR[0].id}`" :src="EDMtemplate[2].productR[0].imgSrc || DefaultLayout[2].productR[0].imgSrc"
                                     :alt="EDMtemplate[2].productR[0].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
@@ -390,18 +389,18 @@
                         <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tbody>
                             <tr>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productL[1].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productL[1].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :src="EDMtemplate[2].productL[1].imgSrc || DefaultLayout[2].productL[1].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productL[1].id}`" :src="EDMtemplate[2].productL[1].imgSrc || DefaultLayout[2].productL[1].imgSrc"
                                     :alt="EDMtemplate[2].productL[1].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
                               </td>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productR[1].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productR[1].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :src="EDMtemplate[2].productR[1].imgSrc || DefaultLayout[2].productR[1].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productR[1].id}`" :src="EDMtemplate[2].productR[1].imgSrc || DefaultLayout[2].productR[1].imgSrc"
                                     :alt="EDMtemplate[2].productR[1].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
@@ -431,18 +430,18 @@
                         <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tbody>
                             <tr>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productL[2].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productL[2].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :src="EDMtemplate[2].productL[2].imgSrc || DefaultLayout[2].productL[2].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productL[2].id}`" :src="EDMtemplate[2].productL[2].imgSrc || DefaultLayout[2].productL[2].imgSrc"
                                     :alt="EDMtemplate[2].productL[2].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
                               </td>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productR[2].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productR[2].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :src="EDMtemplate[2].productR[2].imgSrc || DefaultLayout[2].productR[2].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productR[2].id}`" :src="EDMtemplate[2].productR[2].imgSrc || DefaultLayout[2].productR[2].imgSrc"
                                     :alt="EDMtemplate[2].productR[2].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
@@ -472,18 +471,18 @@
                         <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tbody>
                             <tr>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productL[3].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productL[3].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :src="EDMtemplate[2].productL[3].imgSrc || DefaultLayout[2].productL[3].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productL[3].id}`" :src="EDMtemplate[2].productL[3].imgSrc || DefaultLayout[2].productL[3].imgSrc"
                                     :alt="EDMtemplate[2].productL[3].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
                               </td>
-                              <td class="edmTable_td" :id="`edmTable_${EDMtemplate[2].productR[3].id}`">
+                              <td class="edmTable_td">
                                 <a :href="EDMtemplate[2].productR[3].link" target="_blank">
                                   <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :src="EDMtemplate[2].productR[3].imgSrc || DefaultLayout[2].productR[3].imgSrc"
+                                  <img :id="`edmTable_${EDMtemplate[2].productR[3].id}`" :src="EDMtemplate[2].productR[3].imgSrc || DefaultLayout[2].productR[3].imgSrc"
                                     :alt="EDMtemplate[2].productR[3].alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
@@ -510,17 +509,16 @@
                 <!-- footer -->
                 <table width="650" align="center" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td class="edmTable_td" v-for="(footerIcon, key) in EDMtemplate[2].footerIcon"
-                      :id="`edmTable_${footerIcon.id}`">
+                    <td class="edmTable_td" v-for="(footerIcon, key) in EDMtemplate[2].footerIcon">
                       <a :href="footerIcon.link">
                         <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="650"> -->
-                        <img :src="footerIcon.imgSrc || DefaultLayout[2].footer[key].imgSrc" :alt="footerIcon.alt"
+                        <img :id="`edmTable_${footerIcon.id}`" :src="footerIcon.imgSrc || DefaultLayout[2].footer[key].imgSrc" :alt="footerIcon.alt"
                           style="vertical-align:0; display:block;" width="60">
                       </a>
                     </td>
-                    <td class="edmTable_td" id="edmTable_footer_contant">
+                    <td class="edmTable_td">
                       <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="650"> -->
-                      <img alt="footer_content"
+                      <img id="edmTable_footer_contant" alt="footer_content"
                         :src="EDMtemplate[2].footerContent.imgSrc || DefaultLayout[2].footerContent.imgSrc"
                         style="vertical-align:0; display:block;" width="470">
                     </td>
