@@ -714,11 +714,18 @@ var app = new Vue({
 		],
 		oupputData: '',
 		isOpenNav: false,
+		isAddUTM: false,
+		UTMData: {
+			source: 'EDM',
+			medium: 'EDM',
+			campaign: 'test',
+		},
 	},
 	methods: {
 		outputEDMHtml() {
 			const preview = document.getElementById('preview');
 			this.oupputData = preview.firstChild.outerHTML;
+
 		},
 		focusImg(id, i) {
 			const edmTable_td = document.querySelectorAll('.edmTable_td');
@@ -728,11 +735,9 @@ var app = new Vue({
 			})
 			switch (i) {
 				case 0:
-					console.log(target);
 					target.classList.add('l-targetFocus_link');
 					break;
 				case 1:
-					console.log(target);
 					target.classList.add('l-targetFocus_img');
 					break;
 			}
@@ -743,12 +748,62 @@ var app = new Vue({
 				item.classList.remove('l-targetFocus_img', 'l-targetFocus_link');
 			})
 		},
-		openNav() {
-			
-		},
-		closeNav() {
+		addUTM(index) {
+			// 先取得 templateObj (物件)
 
+			const vm = this;
+			if(vm.isAddUTM) return;
+			const UTMStr = `?utm_source=${vm.UTMData.source}&utm_medium=${vm.UTMData.medium}&utm_campaign=${vm.UTMData.campaign}`;
+			
+			// layout
+			vm.EDMtemplate[index].logo.link += UTMStr;
+			vm.EDMtemplate[index].menu.forEach((item) => {
+				item.link += UTMStr;
+			});
+
+
+			// 判斷是否有 banner
+			if(vm.EDMtemplate[index].banner){
+				vm.EDMtemplate[index].banner.link += UTMStr;
+			};
+
+			// 判斷是否有 btn
+			if(vm.EDMtemplate[index].button){
+				vm.EDMtemplate[index].button.link += UTMStr;
+			};
+			// pd 
+			// 要判斷有幾個單欄雙欄
+
+			if(vm.EDMtemplate[index].product){
+				const pd = vm.EDMtemplate[index].product;
+				pd.forEach((item) => {
+					item.link += UTMStr;
+				})
+			};
+
+			if(vm.EDMtemplate[index].productS){
+				const pd = vm.EDMtemplate[index].productS;
+				pd.forEach((item) => {
+					item.link += UTMStr;
+				})
+			};
+
+			if(vm.EDMtemplate[index].productL){
+				const pd = vm.EDMtemplate[index].productL;
+				pd.forEach((item) => {
+					item.link += UTMStr;
+				})
+			};
+
+			if(vm.EDMtemplate[index].productR){
+				const pd = vm.EDMtemplate[index].productR;
+				pd.forEach((item) => {
+					item.link += UTMStr;
+				})
+			};
+			vm.isAddUTM = true;
 		}
+
 	},
 	computed: {
 		toNumber() {
