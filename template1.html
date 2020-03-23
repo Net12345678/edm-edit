@@ -54,7 +54,7 @@
                   <input class="form-control" type="text" v-model="UTMData.campaign" placeholder="UTM_campaign">
                 </div>
                 <div class="w-100 mt-3"></div>
-                <button type="button" class="btn btn-success mx-auto d-block" type="button" @click="">加入utm</button>
+                <button type="button" class="btn btn-success mx-auto d-block" type="button" @click="addUTM(0)">加入utm</button>
               </div>
             </div>
             <!-- logo -->
@@ -70,7 +70,7 @@
                     class="form-control c-imgsrc" 
                     type="text" 
                     @blur="blurImg" 
-                    v-model="EDMtemplate[0].logo.imgSrc + 123" placeholder="圖片位址" @focus="focusImg('edmTable_logo',1)">
+                    v-model="EDMtemplate[0].logo.imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_logo',1)">
                 </div>
               </div>
             </div>

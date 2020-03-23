@@ -40,6 +40,25 @@
             <a href="#" @click.prev="isOpenNav = !isOpenNav">Menu</a>
             <!-- <form id="edmInput" v-if="EDMtemplate" v-html="EDMForm[EDMtemplateIndex]"> -->
             <form id="edmInput">
+              <!-- utm -->
+              <h2 class="h2 text-center">UTM</h2>
+              <div class="form-group">              
+                <div class="row">
+                  <div class="col">
+                    <input class="form-control" type="text" v-model="UTMData.source" placeholder="UTM_source">
+                  </div>
+                  <div class="w-100 mt-3"></div>
+                  <div class="col">
+                    <input class="form-control" type="text" v-model="UTMData.medium" placeholder="UTM_medium">
+                  </div>
+                  <div class="w-100 mt-3"></div>
+                  <div class="col">
+                    <input class="form-control" type="text" v-model="UTMData.campaign" placeholder="UTM_campaign">
+                  </div>
+                  <div class="w-100 mt-3"></div>
+                  <button type="button" class="btn btn-success mx-auto d-block" type="button" @click="addUTM(1)">加入utm</button>
+                </div>
+              </div>
               <!-- logo -->
               <h2 class="h2 text-center">Layout</h2>
               <div class="form-group">
