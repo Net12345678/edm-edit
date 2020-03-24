@@ -75,47 +75,14 @@
               </div>
             </div>
             <!-- menu -->
-            <div class="form-group">
-              <label class="mb-2" for="women_link">WOMEN <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
+            <div class="form-group" v-for="menu in EDMtemplate[0].menu">
+              <label class="mb-2" for="women_link">{{menu.id.toUpperCase()}} <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
               <div class="row">
                 <div class="col">
-                  <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[0].link" placeholder="連結" @focus="focusImg('edmTable_women',0)">
+                  <input class="form-control" type="text" @blur="blurImg" v-model="menu.link" placeholder="連結" @focus="focusImg(`edmTable_${menu.id}`,0)">
                 </div>
                 <div class="col">
-                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[0].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_women',1)">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="mb-2" for="men_link">MEN <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
-              <div class="row">
-                <div class="col">
-                  <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[1].link" placeholder="連結" @focus="focusImg('edmTable_men', 0)">
-                </div>
-                <div class="col">
-                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[1].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_men', 1)">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="mb-2" for="kids_link">KIDS <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
-              <div class="row">
-                <div class="col">
-                  <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[2].link" placeholder="連結" @focus="focusImg('edmTable_kids', 0)">
-                </div>
-                <div class="col">
-                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[2].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_kids', 1)">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="mb-2" for="baby_link">BABY <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
-              <div class="row">
-                <div class="col">
-                  <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[3].link" placeholder="連結" @focus="focusImg('edmTable_baby', 0)">
-                </div>
-                <div class="col">
-                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="EDMtemplate[0].menu[3].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_baby', 1)">
+                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="menu.imgSrc" placeholder="圖片位址" @focus="focusImg(`edmTable_${menu.id}`,1)">
                 </div>
               </div>
             </div>
@@ -218,7 +185,7 @@
                 <tbody>
                   <tr>
                     <td class="edmTable_td">
-                      <a :href="EDMtemplate[0].logo.link" target="_blank">
+                      <a :href="EDMtemplate[0].logo.utmLink || EDMtemplate[0].logo.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="650"> -->
                         <img id="edmTable_logo" alt="logo" :src="EDMtemplate[0].logo.imgSrc || DefaultLayout[0].logo.imgSrc" style="vertical-align:0; display:block;" width="650">
                       </a>
@@ -230,7 +197,7 @@
                         <tbody>
                           <tr>
                             <td class="edmTable_td" v-for="(menu, index) in EDMtemplate[0].menu">
-                              <a :href="menu.link" target="_blank">
+                              <a :href="menu.utmLink || menu.link" target="_blank">
                                 <img :id="`edmTable_${menu.id}`" :src="EDMtemplate[0].menu[index].imgSrc || DefaultLayout[0].menu[index].imgSrc" :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width" border="0">
                               </a>
                             </td>
@@ -246,7 +213,7 @@
                 <tbody>
                   <tr>
                     <td class="edmTable_td">
-                      <a :href="EDMtemplate[0].banner.link" target="_blank">
+                      <a :href="EDMtemplate[0].banner.utmLink || EDMtemplate[0].banner.link" target="_blank">
                         <img id="edmTable_banner" alt="banner_1" :src="EDMtemplate[0].banner.imgSrc || DefaultLayout[0].banner.imgSrc" style="vertical-align:0; display:block;" width="650">
                       </a>
                     </td>
@@ -258,7 +225,7 @@
                 <tbody>
                   <tr>
                     <td class="edmTable_td">
-                      <a :href="EDMtemplate[0].button.link" target="_blank">
+                      <a :href="EDMtemplate[0].button.utmLink || EDMtemplate[0].button.link" target="_blank">
                         <img id="edmTable_btn" alt="BUTTON" :src="EDMtemplate[0].button.imgSrc || DefaultLayout[0].button.imgSrc" style="vertical-align:0; display:block;" width="650">
                       </a>
                     </td>
@@ -270,7 +237,7 @@
                 <tbody>                  
                   <tr v-for="(product, index) in EDMtemplate[0].product">
                     <td class="edmTable_td">
-                      <a :href="product.link" target="_blank">
+                      <a :href="product.utmLink || product.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="650"> -->
                         <img :id="`edmTable_${product.id}`" :src="product.imgSrc || DefaultLayout[0].product[index].imgSrc" :alt="product.alt" style="vertical-align:0; display:block;" width="650">
                       </a>

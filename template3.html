@@ -76,59 +76,14 @@
                 </div>
               </div>
               <!-- menu -->
-              <div class="form-group">
-                <label class="mb-2" for="women_link">WOMEN <span class="l-aside_label_link">連結</span> / <span
-                    class="l-aside_label_img">圖片</span></label>
+              <div class="form-group" v-for="menu in EDMtemplate[2].menu">
+                <label class="mb-2" for="women_link">{{menu.id.toUpperCase()}} <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
                 <div class="row">
                   <div class="col">
-                    <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].menu[0].link"
-                      placeholder="連結" @focus="focusImg('edmTable_women',0)">
+                    <input class="form-control" type="text" @blur="blurImg" v-model="menu.link" placeholder="連結" @focus="focusImg(`edmTable_${menu.id}`,0)">
                   </div>
                   <div class="col">
-                    <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                      v-model="EDMtemplate[2].menu[0].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_women',1)">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="mb-2" for="men_link">MEN <span class="l-aside_label_link">連結</span> / <span
-                    class="l-aside_label_img">圖片</span></label>
-                <div class="row">
-                  <div class="col">
-                    <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].menu[1].link"
-                      placeholder="連結" @focus="focusImg('edmTable_men', 0)">
-                  </div>
-                  <div class="col">
-                    <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                      v-model="EDMtemplate[2].menu[1].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_men', 1)">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="mb-2" for="kids_link">KIDS <span class="l-aside_label_link">連結</span> / <span
-                    class="l-aside_label_img">圖片</span></label>
-                <div class="row">
-                  <div class="col">
-                    <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].menu[2].link"
-                      placeholder="連結" @focus="focusImg('edmTable_kids', 0)">
-                  </div>
-                  <div class="col">
-                    <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                      v-model="EDMtemplate[2].menu[2].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_kids', 1)">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="mb-2" for="baby_link">BABY <span class="l-aside_label_link">連結</span> / <span
-                    class="l-aside_label_img">圖片</span></label>
-                <div class="row">
-                  <div class="col">
-                    <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].menu[3].link"
-                      placeholder="連結" @focus="focusImg('edmTable_baby', 0)">
-                  </div>
-                  <div class="col">
-                    <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                      v-model="EDMtemplate[2].menu[3].imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_baby', 1)">
+                    <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="menu.imgSrc" placeholder="圖片位址" @focus="focusImg(`edmTable_${menu.id}`,1)">
                   </div>
                 </div>
               </div>
@@ -136,129 +91,33 @@
               <!-- product -->
               <h2 class="h2 text-center">Product</h2>
               <!-- 雙欄 -->
-              <div class="form-group">
-                <h3 class="my-3">Product 1 雙欄</h3>
+              <div class="form-group" v-for="(pd, index) in EDMtemplate[2].productTwin">
+                <h3 class="my-3">Product {{ index+1 }} 雙欄</h3>
                 <div class="border c-border-double p-3 rounded">
                   <label class="mb-2" for="product_link">左欄 <span class="l-aside_label_link">連結</span> /<span
                       class="l-aside_label_img">圖片</span></label>
                   <div class="row mb-2  ">
                     <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productL[0].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productL[0].id}`, 0)">
+                      <input class="form-control" type="text" @blur="blurImg" v-model="pd.l.link"
+                        placeholder="連結" @focus="focusImg(`edmTable_${pd.l.id}`, 0)">
                     </div>
                     <div class="col">
                       <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productL[0].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productL[0].id}`, 1)">
+                        v-model="pd.l.imgSrc" placeholder="圖片位址"
+                        @focus="focusImg(`edmTable_${pd.l.id}`, 1)">
                     </div>
                   </div>
                   <label class="mb-2" for="product_link">右欄 <span class="l-aside_label_link">連結</span> /<span
                       class="l-aside_label_img">圖片</span></label>
                   <div class="row">
                     <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productR[0].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productR[0].id}`, 0)">
+                      <input class="form-control" type="text" @blur="blurImg" v-model="pd.r.link"
+                        placeholder="連結" @focus="focusImg(`edmTable_${pd.r.id}`, 0)">
                     </div>
                     <div class="col">
                       <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productR[0].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productR[0].id}`, 1)">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- 雙欄 -->
-              <div class="form-group">
-                <h3 class="my-3">Product 2 雙欄</h3>
-                <div class="border c-border-double p-3 rounded">
-                  <label class="mb-2" for="product_link">左欄 <span class="l-aside_label_link">連結</span> /<span
-                      class="l-aside_label_img">圖片</span></label>
-                  <div class="row mb-2  ">
-                    <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productL[1].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productL[1].id}`, 0)">
-                    </div>
-                    <div class="col">
-                      <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productL[1].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productL[1].id}`, 1)">
-                    </div>
-                  </div>
-                  <label class="mb-2" for="product_link">右欄 <span class="l-aside_label_link">連結</span> /<span
-                      class="l-aside_label_img">圖片</span></label>
-                  <div class="row">
-                    <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productR[1].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productR[1].id}`, 0)">
-                    </div>
-                    <div class="col">
-                      <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productR[1].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productR[1].id}`, 1)">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- 雙欄 -->
-              <div class="form-group">
-                <h3 class="my-3">Product 3 雙欄</h3>
-                <div class="border c-border-double p-3 rounded">
-                  <label class="mb-2" for="product_link">左欄 <span class="l-aside_label_link">連結</span> /<span
-                      class="l-aside_label_img">圖片</span></label>
-                  <div class="row mb-2  ">
-                    <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productL[2].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productL[2].id}`, 0)">
-                    </div>
-                    <div class="col">
-                      <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productL[2].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productL[2].id}`, 1)">
-                    </div>
-                  </div>
-                  <label class="mb-2" for="product_link">右欄 <span class="l-aside_label_link">連結</span> /<span
-                      class="l-aside_label_img">圖片</span></label>
-                  <div class="row">
-                    <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productR[2].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productR[2].id}`, 0)">
-                    </div>
-                    <div class="col">
-                      <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productR[2].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productR[2].id}`, 1)">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- 雙欄 -->
-              <div class="form-group">
-                <h3 class="my-3">Product 4 雙欄</h3>
-                <div class="border c-border-double p-3 rounded">
-                  <label class="mb-2" for="product_link">左欄 <span class="l-aside_label_link">連結</span> /<span
-                      class="l-aside_label_img">圖片</span></label>
-                  <div class="row mb-2  ">
-                    <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productL[3].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productL[3].id}`, 0)">
-                    </div>
-                    <div class="col">
-                      <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productL[3].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productL[3].id}`, 1)">
-                    </div>
-                  </div>
-                  <label class="mb-2" for="product_link">右欄 <span class="l-aside_label_link">連結</span> /<span
-                      class="l-aside_label_img">圖片</span></label>
-                  <div class="row">
-                    <div class="col">
-                      <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[2].productR[3].link"
-                        placeholder="連結" @focus="focusImg(`edmTable_${EDMtemplate[2].productR[3].id}`, 0)">
-                    </div>
-                    <div class="col">
-                      <input class="form-control c-imgsrc" type="text" @blur="blurImg"
-                        v-model="EDMtemplate[2].productR[3].imgSrc" placeholder="圖片位址"
-                        @focus="focusImg(`edmTable_${EDMtemplate[2].productR[3].id}`, 1)">
+                        v-model="pd.r.imgSrc" placeholder="圖片位址"
+                        @focus="focusImg(`edmTable_${pd.r.id}`, 1)">
                     </div>
                   </div>
                 </div>
@@ -332,7 +191,7 @@
                   <tbody>
                     <tr>
                       <td class="edmTable_td">
-                        <a :href="EDMtemplate[2].logo.link" target="_blank">
+                        <a :href="EDMtemplate[2].logo.utmLink || EDMtemplate[2].logo.link" target="_blank">
                           <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="650"> -->
                           <img id="edmTable_logo" alt="logo" :src="EDMtemplate[2].logo.imgSrc || DefaultLayout[2].logo.imgSrc"
                             style="vertical-align:0; display:block;" width="650">
@@ -345,7 +204,7 @@
                           <tbody>
                             <tr>
                               <td class="edmTable_td" v-for="(menu, index) in EDMtemplate[2].menu">
-                                <a :href="menu.link" target="_blank">
+                                <a :href="menu.utmLink || menu.link" target="_blank">
                                   <img :id="`edmTable_${menu.id}`" :src="EDMtemplate[2].menu[index].imgSrc || DefaultLayout[2].menu[index].imgSrc"
                                     :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width"
                                     border="0">
@@ -359,30 +218,31 @@
                   </tbody>
                 </table>
 
-                <!-- men 1 雙欄-->
+                <!-- 雙欄-->
                 <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
                   <tbody>
-                    <tr>
+                    <tr v-for="(pd, index) in EDMtemplate[2].productTwin">
                       <td>
                         <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tbody>
                             <tr>
                               <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productL[0].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productL[0].id}`" :src="EDMtemplate[2].productL[0].imgSrc || DefaultLayout[2].productL[0].imgSrc"
-                                    :alt="EDMtemplate[2].productL[0].alt" style="vertical-align:0; display:block;"
+                                <a :href="pd.l.utmLink || pd.l.link" target="_blank">
+                                  <img :id="`edmTable_${pd.l.id}`" :src="pd.l.imgSrc || pd.l.defaultImg"
+                                    :alt="pd.l.alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
                               </td>
                               <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productR[0].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productR[0].id}`" :src="EDMtemplate[2].productR[0].imgSrc || DefaultLayout[2].productR[0].imgSrc"
-                                    :alt="EDMtemplate[2].productR[0].alt" style="vertical-align:0; display:block;"
+                                <a :href="pd.r.utmLink || pd.r.link" target="_blank">
+                                  <img :id="`edmTable_${pd.r.id}`" :src="pd.r.imgSrc || pd.r.defaultImg"
+                                    :alt="pd.r.alt" style="vertical-align:0; display:block;"
                                     width="325">
                                 </a>
                               </td>
+                            </tr>
+                            <tr>
+                              <td height="30"></td>
                             </tr>
                           </tbody>
                         </table>
@@ -390,140 +250,6 @@
                     </tr>
                   </tbody>
                 </table>
-                <!-- 留白 30 -->
-                <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td height="30">
-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- men 1 雙欄-->
-                <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                          <tbody>
-                            <tr>
-                              <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productL[1].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productL[1].id}`" :src="EDMtemplate[2].productL[1].imgSrc || DefaultLayout[2].productL[1].imgSrc"
-                                    :alt="EDMtemplate[2].productL[1].alt" style="vertical-align:0; display:block;"
-                                    width="325">
-                                </a>
-                              </td>
-                              <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productR[1].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productR[1].id}`" :src="EDMtemplate[2].productR[1].imgSrc || DefaultLayout[2].productR[1].imgSrc"
-                                    :alt="EDMtemplate[2].productR[1].alt" style="vertical-align:0; display:block;"
-                                    width="325">
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- 留白 30 -->
-                <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td height="30">
-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- men 1 雙欄-->
-                <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                          <tbody>
-                            <tr>
-                              <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productL[2].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productL[2].id}`" :src="EDMtemplate[2].productL[2].imgSrc || DefaultLayout[2].productL[2].imgSrc"
-                                    :alt="EDMtemplate[2].productL[2].alt" style="vertical-align:0; display:block;"
-                                    width="325">
-                                </a>
-                              </td>
-                              <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productR[2].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productR[2].id}`" :src="EDMtemplate[2].productR[2].imgSrc || DefaultLayout[2].productR[2].imgSrc"
-                                    :alt="EDMtemplate[2].productR[2].alt" style="vertical-align:0; display:block;"
-                                    width="325">
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- 留白 30 -->
-                <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td height="30">
-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- men 1 雙欄-->
-                <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
-                          <tbody>
-                            <tr>
-                              <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productL[3].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men1.jpg" alt="men1_left" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productL[3].id}`" :src="EDMtemplate[2].productL[3].imgSrc || DefaultLayout[2].productL[3].imgSrc"
-                                    :alt="EDMtemplate[2].productL[3].alt" style="vertical-align:0; display:block;"
-                                    width="325">
-                                </a>
-                              </td>
-                              <td class="edmTable_td">
-                                <a :href="EDMtemplate[2].productR[3].link" target="_blank">
-                                  <!-- <img style="vertical-align:0; display:block;" src="men2.jpg" alt="men1_right" width="325"> -->
-                                  <img :id="`edmTable_${EDMtemplate[2].productR[3].id}`" :src="EDMtemplate[2].productR[3].imgSrc || DefaultLayout[2].productR[3].imgSrc"
-                                    :alt="EDMtemplate[2].productR[3].alt" style="vertical-align:0; display:block;"
-                                    width="325">
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- 留白 30 -->
-                <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td height="30">
-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-
 
                 <!-- footer -->
                 <table width="650" align="center" cellpadding="0" cellspacing="0">

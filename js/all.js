@@ -349,14 +349,17 @@ var app = new Vue({
 		],
 		EDMtemplate: [
 			{
+				
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com',
+					utmLink: '',
 					imgSrc: '',
 				},
 				menu: [{
 					id: 'women',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'women',
 					width: '162.5'
@@ -364,6 +367,7 @@ var app = new Vue({
 				{
 					id: 'men',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'men',
 					width: '162.5'
@@ -371,6 +375,7 @@ var app = new Vue({
 				{
 					id: 'kids',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'kids',
 					width: '162.5'
@@ -378,6 +383,7 @@ var app = new Vue({
 				{
 					id: 'baby',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'baby',
 					width: '162.5'
@@ -386,58 +392,68 @@ var app = new Vue({
 				banner: {
 					id: 'banner',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 				},
 				button: {
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 				},
 				product: [
 					{
 						id: 'pd_1',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product01',
 					},
 					{
 						id: 'pd_2',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product02',
 					},
 					{
 						id: 'pd_3',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product03',
 					},
 					{
 						id: 'pd_4',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product04',
 					},
 					{
 						id: 'pd_5',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product05',
 					},
 					{
 						id: 'pd_6',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product06',
 					},
 					{
 						id: 'pd_7',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product07',
 					},
 					{
 						id: 'pd_8',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product08',
 					}
@@ -471,11 +487,13 @@ var app = new Vue({
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com',
+					utmLink: '',
 					imgSrc: '',
 				},
 				menu: [{
 					id: 'women',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'women',
 					width: '162.5'
@@ -483,6 +501,7 @@ var app = new Vue({
 				{
 					id: 'men',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'men',
 					width: '162.5'
@@ -490,6 +509,7 @@ var app = new Vue({
 				{
 					id: 'kids',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'kids',
 					width: '162.5'
@@ -497,6 +517,7 @@ var app = new Vue({
 				{
 					id: 'baby',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'baby',
 					width: '162.5'
@@ -505,22 +526,26 @@ var app = new Vue({
 				banner: {
 					id: 'banner',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 				},
 				button: {
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 				},
 				productS: [
 					{
 						id: 'pds_1',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product01',
 					},
 					{
 						id: 'pds_2',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product02',
 					},
@@ -529,18 +554,21 @@ var app = new Vue({
 					{
 						id: 'pdl_1',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product01_L',
 					},
 					{
 						id: 'pdl_2',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product02_L',
 					},
 					{
 						id: 'pdl_3',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product03_L',
 					},
@@ -549,18 +577,21 @@ var app = new Vue({
 					{
 						id: 'pdr_1',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product01_R',
 					},
 					{
 						id: 'pdr_2',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product02_R',
 					},
 					{
 						id: 'pdr_3',
 						link: '',
+						utmLink: '',
 						imgSrc: '',
 						alt: 'product03_R',
 					},
@@ -594,11 +625,13 @@ var app = new Vue({
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com',
+					utmLink: '',
 					imgSrc: '',
 				},
 				menu: [{
 					id: 'women',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'women',
 					width: '162.5'
@@ -606,6 +639,7 @@ var app = new Vue({
 				{
 					id: 'men',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'men',
 					width: '162.5'
@@ -613,6 +647,7 @@ var app = new Vue({
 				{
 					id: 'kids',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'kids',
 					width: '162.5'
@@ -620,6 +655,7 @@ var app = new Vue({
 				{
 					id: 'baby',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 					alt: 'baby',
 					width: '162.5'
@@ -628,62 +664,86 @@ var app = new Vue({
 				banner: {
 					id: 'banner',
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 				},
 				button: {
 					link: '',
+					utmLink: '',
 					imgSrc: '',
 				},
-				productL: [
+				productTwin: [
 					{
-						id: 'pdl_1',
-						link: '',
-						imgSrc: '',
-						alt: 'product01_L',
+						l :{
+							id: 'pdl_1',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
+							alt: 'product01_L',
+						},
+						r: {
+							id: 'pdr_1',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
+							alt: 'product01_R',
+						},
 					},
 					{
-						id: 'pdl_2',
-						link: '',
-						imgSrc: '',
-						alt: 'product02_L',
+						l :{
+							id: 'pdl_2',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
+							alt: 'product02_L',
+						},
+						r: {
+							id: 'pdr_2',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
+							alt: 'product02_R',
+						},
 					},
 					{
-						id: 'pdl_3',
-						link: '',
-						imgSrc: '',
-						alt: 'product03_L',
+						l :{
+							id: 'pdl_3',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
+							alt: 'product03_L',
+						},
+						r: {
+							id: 'pdr_3',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
+							alt: 'product03_R',
+						},
 					},
 					{
-						id: 'pdl_4',
-						link: '',
-						imgSrc: '',
-						alt: 'product04_L',
-					},
-				],
-				productR: [
-					{
-						id: 'pdr_1',
-						link: '',
-						imgSrc: '',
-						alt: 'product01_R',
-					},
-					{
-						id: 'pdr_2',
-						link: '',
-						imgSrc: '',
-						alt: 'product02_R',
-					},
-					{
-						id: 'pdr_3',
-						link: '',
-						imgSrc: '',
-						alt: 'product03_R',
-					},
-					{
-						id: 'pdr_4',
-						link: '',
-						imgSrc: '',
-						alt: 'product04_R',
+						l :{
+							id: 'pdl_4',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
+							alt: 'product04_L',
+						},
+						r: {
+							id: 'pdr_4',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
+							alt: 'product04_R',
+						},
 					},
 				],
 				footerIcon: {
@@ -714,7 +774,6 @@ var app = new Vue({
 		],
 		oupputData: '',
 		isOpenNav: false,
-		isAddUTM: false,
 		UTMData: {
 			source: '',
 			medium: '',
@@ -750,35 +809,30 @@ var app = new Vue({
 		},
 		addUTM(index) {
 			// 先取得 templateObj (物件)
-
 			const vm = this;
+			
 			const UTMStr = `?utm_source=${vm.UTMData.source}&utm_medium=${vm.UTMData.medium}&utm_campaign=${vm.UTMData.campaign}`;
-
+			
 			if(!vm.UTMData.source || !vm.UTMData.medium || !vm.UTMData.campaign){
-				console.log('沒填 UTM');
+				alert('沒填 UTM 喔');
 				return;
-			}else if(vm.isAddUTM) {
-				console.log('已加入 UTM 網址');
-				// 清空 utm 值只保留原先網址
-				return;
-			};
-			vm.isAddUTM = true;
+			}
 
 			// layout
-			vm.EDMtemplate[index].logo.link += UTMStr;
+			vm.EDMtemplate[index].logo.utmLink = vm.EDMtemplate[index].logo.link + UTMStr;
 			vm.EDMtemplate[index].menu.forEach((item) => {
-				item.link += UTMStr;
+				item.utmLink = item.link + UTMStr;
 			});
 
 
 			// 判斷是否有 banner
 			if(vm.EDMtemplate[index].banner){
-				vm.EDMtemplate[index].banner.link += UTMStr;
+				vm.EDMtemplate[index].banner.utmLink = vm.EDMtemplate[index].banner.link + UTMStr;
 			};
 
 			// 判斷是否有 btn
 			if(vm.EDMtemplate[index].button){
-				vm.EDMtemplate[index].button.link += UTMStr;
+				vm.EDMtemplate[index].button.utmLink = vm.EDMtemplate[index].button.link + UTMStr;
 			};
 			// pd 
 			// 要判斷有幾個單欄雙欄
@@ -786,28 +840,36 @@ var app = new Vue({
 			if(vm.EDMtemplate[index].product){
 				const pd = vm.EDMtemplate[index].product;
 				pd.forEach((item) => {
-					item.link += UTMStr;
+					item.utmLink = item.link + UTMStr;
 				})
 			};
 
 			if(vm.EDMtemplate[index].productS){
 				const pd = vm.EDMtemplate[index].productS;
 				pd.forEach((item) => {
-					item.link += UTMStr;
+					item.utmLink = item.link + UTMStr;
 				})
 			};
 
 			if(vm.EDMtemplate[index].productL){
 				const pd = vm.EDMtemplate[index].productL;
 				pd.forEach((item) => {
-					item.link += UTMStr;
+					item.utmLink = item.link + UTMStr;
 				})
 			};
 
 			if(vm.EDMtemplate[index].productR){
 				const pd = vm.EDMtemplate[index].productR;
 				pd.forEach((item) => {
-					item.link += UTMStr;
+					item.utmLink = item.link + UTMStr;
+				})
+			};
+
+			if(vm.EDMtemplate[index].productTwin){
+				const pd = vm.EDMtemplate[index].productTwin;
+				pd.forEach((item) => {
+					item.l.utmLink = item.l.link + UTMStr;
+					item.r.utmLink = item.r.link + UTMStr;
 				})
 			};
 			
