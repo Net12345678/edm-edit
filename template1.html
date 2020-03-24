@@ -100,30 +100,6 @@
                 </div>
               </div>
             </div>
-            <!-- banner -->
-            <div class="form-group">
-              <label class="mb-2" for="banner_link">Banner <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
-              <div class="row">
-                <div class="col">
-                  <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[0].banner.link" placeholder="連結" @focus="focusImg('edmTable_banner', 0)">
-                </div>
-                <div class="col">
-                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="EDMtemplate[0].banner.imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_banner', 1)">
-                </div>
-              </div>
-            </div>
-            <!-- button -->
-            <div class="form-group" v-if="EDMtemplate[0].button">
-              <label class="mb-2" for="button_link">Button <span class="l-aside_label_link">連結</span> / <span class="l-aside_label_img">圖片</span></label>
-              <div class="row">
-                <div class="col">
-                  <input class="form-control" type="text" @blur="blurImg" v-model="EDMtemplate[0].button.link" placeholder="連結" @focus="focusImg('edmTable_btn', 0)">
-                </div>
-                <div class="col">
-                  <input class="form-control c-imgsrc" type="text" @blur="blurImg" v-model="EDMtemplate[0].button.imgSrc" placeholder="圖片位址" @focus="focusImg('edmTable_btn', 1)">
-                </div>
-              </div>
-            </div>
             <hr> 
             <!-- product -->
             <h2 class="h2 text-center">Product</h2>
@@ -221,31 +197,7 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>
-              <!-- banner -->
-              <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
-                <tbody>
-                  <tr>
-                    <td class="edmTable_td">
-                      <a :href="EDMtemplate[0].banner.link" target="_blank">
-                        <img id="edmTable_banner" alt="banner_1" :src="EDMtemplate[0].banner.imgSrc || DefaultLayout[0].banner.imgSrc" style="vertical-align:0; display:block;" width="650">
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- btn -->
-              <table width="650" align="center" cellpadding="0" cellspacing="0" border="0" v-if="EDMtemplate[0].button">
-                <tbody>
-                  <tr>
-                    <td class="edmTable_td">
-                      <a :href="EDMtemplate[0].button.link" target="_blank">
-                        <img id="edmTable_btn" alt="BUTTON" :src="EDMtemplate[0].button.imgSrc || DefaultLayout[0].button.imgSrc" style="vertical-align:0; display:block;" width="650">
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>              
+              </table>             
               <!-- men 2 單欄-->
               <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
                 <tbody>                  
