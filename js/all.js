@@ -351,7 +351,7 @@ var app = new Vue({
 			{
 				logo: {
 					id: 'logo',
-					link: 'https://www.nuvfashion.com/',
+					link: 'https://www.nuvfashion.com',
 					imgSrc: '',
 				},
 				menu: [{
@@ -470,7 +470,7 @@ var app = new Vue({
 			{
 				logo: {
 					id: 'logo',
-					link: 'https://www.nuvfashion.com/',
+					link: 'https://www.nuvfashion.com',
 					imgSrc: '',
 				},
 				menu: [{
@@ -593,7 +593,7 @@ var app = new Vue({
 			{
 				logo: {
 					id: 'logo',
-					link: 'https://www.nuvfashion.com/',
+					link: 'https://www.nuvfashion.com',
 					imgSrc: '',
 				},
 				menu: [{
@@ -716,9 +716,9 @@ var app = new Vue({
 		isOpenNav: false,
 		isAddUTM: false,
 		UTMData: {
-			source: 'EDM',
-			medium: 'EDM',
-			campaign: 'test',
+			source: '',
+			medium: '',
+			campaign: '',
 		},
 	},
 	methods: {
@@ -752,9 +752,18 @@ var app = new Vue({
 			// 先取得 templateObj (物件)
 
 			const vm = this;
-			if(vm.isAddUTM) return;
 			const UTMStr = `?utm_source=${vm.UTMData.source}&utm_medium=${vm.UTMData.medium}&utm_campaign=${vm.UTMData.campaign}`;
-			
+
+			if(!vm.UTMData.source || !vm.UTMData.medium || !vm.UTMData.campaign){
+				console.log('沒填 UTM');
+				return;
+			}else if(vm.isAddUTM) {
+				console.log('已加入 UTM 網址');
+				// 清空 utm 值只保留原先網址
+				return;
+			};
+			vm.isAddUTM = true;
+
 			// layout
 			vm.EDMtemplate[index].logo.link += UTMStr;
 			vm.EDMtemplate[index].menu.forEach((item) => {
@@ -801,8 +810,9 @@ var app = new Vue({
 					item.link += UTMStr;
 				})
 			};
-			vm.isAddUTM = true;
-		}
+			
+		},
+
 
 	},
 	computed: {
