@@ -3,353 +3,67 @@
 var app = new Vue({
 	el: '#app',
 	data: {
-		DefaultLayout: [
-			{
-				logo: {
-					imgSrc: 'https://fakeimg.pl/650x98/ff998f/000?text=LOGO(650x98)',
+		layout: {
+			logo: {
+				imgSrc: 'https://fakeimg.pl/650x98/ff998f/000?text=LOGO(650x98)',
+				link: '#',
+			},
+			menu: [
+				{
+					id: 'women',
 					link: '#',
+					imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=WOMEN',
+					alt: 'women',
+					width: '162.5'
 				},
-				menu: [
-					{
-						id: 'women',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=WOMEN',
-						alt: 'women',
-						width: '162.5'
-					},
-					{
-						id: 'men',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=MEN',
-						alt: 'men',
-						width: '162.5'
-					},
-					{
-						id: 'kids',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=KIDS',
-						alt: 'kids',
-						width: '162.5'
-					},
-					{
-						id: 'baby',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=BABY',
-						alt: 'baby',
-						width: '162.5'
-					}
-				],
-				banner: {
-					imgSrc: 'https://fakeimg.pl/650x600/ff45f9/000?text=BANNER',
+				{
+					id: 'men',
 					link: '#',
+					imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=MEN',
+					alt: 'men',
+					width: '162.5'
 				},
-				button: {
-					imgSrc: 'https://fakeimg.pl/650x150/f9903d/000?text=BUTTON',
+				{
+					id: 'kids',
 					link: '#',
+					imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=KIDS',
+					alt: 'kids',
+					width: '162.5'
 				},
-				product: [
-					{
-						id: 'pd_1',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product01',
-					},
-					{
-						id: 'pd_2',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product02',
-					},
-					{
-						id: 'pd_3',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product03',
-					},
-					{
-						id: 'pd_4',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product04',
-					},
-					{
-						id: 'pd_5',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product05',
-					},
-					{
-						id: 'pd_6',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product06',
-					},
-					{
-						id: 'pd_7',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product07',
-					},
-					{
-						id: 'pd_8',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'product08',
-					}
-				],
-				footer: {
-					fb: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
-						link: ''
-					},
-					ig: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
-						link: ''
-					},
-					line: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
-						link: ''
-					}
+				{
+					id: 'baby',
+					link: '#',
+					imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=BABY',
+					alt: 'baby',
+					width: '162.5'
+				}
+			],
+			footer: {
+				fb: {
+					imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
 				},
-				footerContent: {
-					id: 'footerContent',
-					imgSrc: 'https://fakeimg.pl/470x158/000000/fff?text=footer-content(470x158)',
+				ig: {
+					imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
+				},
+				line: {
+					imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
 				}
 			},
-			{
-				logo: {
-					imgSrc: 'https://fakeimg.pl/650x98/ff998f/000?text=LOGO(650x98)',
-					link: '#',
-				},
-				menu: [
-					{
-						id: 'women',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=WOMEN',
-						alt: 'women',
-						width: '162.5'
-					},
-					{
-						id: 'men',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=MEN',
-						alt: 'men',
-						width: '162.5'
-					},
-					{
-						id: 'kids',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=KIDS',
-						alt: 'kids',
-						width: '162.5'
-					},
-					{
-						id: 'baby',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=BABY',
-						alt: 'baby',
-						width: '162.5'
-					}
-				],
-				banner: {
-					imgSrc: 'https://fakeimg.pl/650x600/ff45f9/000?text=BANNER',
-					link: '#',
-				},
-				button: {
-					imgSrc: 'https://fakeimg.pl/650x150/f9903d/000?text=BUTTON',
-					link: '#',
-				},
-				productS: [
-					{
-						id: 'pds_1',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'pds_1',
-					},
-					{
-						id: 'pds_2',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/650x859/00154d?text=product',
-						alt: 'pds_2',
-					},
-				],
-				productL: [
-					{
-						id: 'pdL_1',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
-						alt: 'pdL_1',
-					},
-					{
-						id: 'pdL_2',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/533655/000?text=MEN-left',
-						alt: 'pdL_2',
-					},
-					{
-						id: 'pdL_3',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/3dff00/000?text=MEN-left',
-						alt: 'pdL_3',
-					},
-				],
-				productR: [
-					{
-						id: 'pdr_1',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
-						alt: 'pdr_1',
-					},
-					{
-						id: 'pdr_2',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/5995d3/000?text=MEN-right',
-						alt: 'pdr_2',
-					},
-					{
-						id: 'pdr_3',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/669d3d/000?text=MEN-right',
-						alt: 'pdr_3',
-					},
-				],
-				footer: {
-					fb: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
-						link: ''
-					},
-					ig: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
-						link: ''
-					},
-					line: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
-						link: ''
-					}
-				},
-				footerContent: {
-					id: 'footerContent',
-					imgSrc: 'https://fakeimg.pl/470x158/000000/fff?text=footer-content(470x158)',
-				}
+			footerContent: {
+				id: 'footerContent',
+				imgSrc: 'https://fakeimg.pl/470x158/000000/fff?text=footer-content(470x158)',
 			},
-			{
-				logo: {
-					imgSrc: 'https://fakeimg.pl/650x98/ff998f/000?text=LOGO(650x98)',
-					link: '#',
-				},
-				menu: [
-					{
-						id: 'women',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/163x88/ffffff/000?text=WOMEN',
-						alt: 'women',
-						width: '162.5'
-					},
-					{
-						id: 'men',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=MEN',
-						alt: 'men',
-						width: '162.5'
-					},
-					{
-						id: 'kids',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=KIDS',
-						alt: 'kids',
-						width: '162.5'
-					},
-					{
-						id: 'baby',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/162x88/ffffff/000?text=BABY',
-						alt: 'baby',
-						width: '162.5'
-					}
-				],
-				banner: {
-					imgSrc: 'https://fakeimg.pl/650x600/ff45f9/000?text=BANNER',
-					link: '#',
-				},
-				button: {
-					imgSrc: 'https://fakeimg.pl/650x150/f9903d/000?text=BUTTON',
-					link: '#',
-				},
-				productL: [
-					{
-						id: 'pdL_1',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
-						alt: 'pdL_1',
-					},
-					{
-						id: 'pdL_2',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/533655/000?text=MEN-left',
-						alt: 'pdL_2',
-					},
-					{
-						id: 'pdL_3',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/3dff00/000?text=MEN-left',
-						alt: 'pdL_3',
-					},
-					{
-						id: 'pdL_4',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/3d6d00/000?text=MEN-left',
-						alt: 'pdL_4',
-					},
-				],
-				productR: [
-					{
-						id: 'pdr_1',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
-						alt: 'pdr_1',
-					},
-					{
-						id: 'pdr_2',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/5995d3/000?text=MEN-right',
-						alt: 'pdr_2',
-					},
-					{
-						id: 'pdr_3',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/669d3d/000?text=MEN-right',
-						alt: 'pdr_3',
-					},
-					{
-						id: 'pdr_4',
-						link: '#',
-						imgSrc: 'https://fakeimg.pl/325x872/3d99d0/000?text=MEN-right',
-						alt: 'pdr_4',
-					},
-				],
-				footer: {
-					fb: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=fb(60x158)',
-						link: ''
-					},
-					ig: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=ig(60x158)',
-						link: ''
-					},
-					line: {
-						imgSrc: 'https://fakeimg.pl/60x158/000000/fff?text=line(60x158)',
-						link: ''
-					}
-				},
-				footerContent: {
-					id: 'footerContent',
-					imgSrc: 'https://fakeimg.pl/470x158/000000/fff?text=footer-content(470x158)',
-				}
+			banner: {
+				imgSrc: 'https://fakeimg.pl/650x600/ff45f9/000?text=BANNER',
+				link: '#',
 			},
-		],
+			button: {
+				imgSrc: 'https://fakeimg.pl/650x150/f9903d/000?text=BUTTON',
+				link: '#',
+			},
+		},
 		EDMtemplate: [
 			{
-				
 				logo: {
 					id: 'logo',
 					link: 'https://www.nuvfashion.com',
@@ -400,12 +114,13 @@ var app = new Vue({
 					utmLink: '',
 					imgSrc: '',
 				},
-				product: [
+				products: [
 					{
 						id: 'pd_1',
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product01',
 					},
 					{
@@ -413,6 +128,7 @@ var app = new Vue({
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product02',
 					},
 					{
@@ -420,6 +136,7 @@ var app = new Vue({
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product03',
 					},
 					{
@@ -427,6 +144,7 @@ var app = new Vue({
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product04',
 					},
 					{
@@ -434,6 +152,7 @@ var app = new Vue({
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product05',
 					},
 					{
@@ -441,6 +160,7 @@ var app = new Vue({
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product06',
 					},
 					{
@@ -448,6 +168,7 @@ var app = new Vue({
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product07',
 					},
 					{
@@ -455,6 +176,7 @@ var app = new Vue({
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product08',
 					}
 				],
@@ -534,66 +256,76 @@ var app = new Vue({
 					utmLink: '',
 					imgSrc: '',
 				},
-				productS: [
+				products: [
+					{
+						l: {
+							id: 'pdl_1',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/55d355/000?text=MEN-left',
+							alt: 'product01_L',
+						},
+						r: {
+							id: 'pdr_1',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/553dd5/000?text=MEN-right',
+							alt: 'product01_R',
+						},
+					},
 					{
 						id: 'pds_1',
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product01',
+					},
+					{
+						l: {
+							id: 'pdl_2',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/533655/000?text=MEN-left',
+							alt: 'product02_L',
+						},
+						r: {
+							id: 'pdr_2',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/5995d3/000?text=MEN-right',
+							alt: 'product02_R',
+						},
 					},
 					{
 						id: 'pds_2',
 						link: '',
 						utmLink: '',
 						imgSrc: '',
+						defaultImg: 'https://fakeimg.pl/650x859/00154d?text=product',
 						alt: 'product02',
 					},
-				],
-				productL: [
 					{
-						id: 'pdl_1',
-						link: '',
-						utmLink: '',
-						imgSrc: '',
-						alt: 'product01_L',
-					},
-					{
-						id: 'pdl_2',
-						link: '',
-						utmLink: '',
-						imgSrc: '',
-						alt: 'product02_L',
-					},
-					{
-						id: 'pdl_3',
-						link: '',
-						utmLink: '',
-						imgSrc: '',
-						alt: 'product03_L',
-					},
-				],
-				productR: [
-					{
-						id: 'pdr_1',
-						link: '',
-						utmLink: '',
-						imgSrc: '',
-						alt: 'product01_R',
-					},
-					{
-						id: 'pdr_2',
-						link: '',
-						utmLink: '',
-						imgSrc: '',
-						alt: 'product02_R',
-					},
-					{
-						id: 'pdr_3',
-						link: '',
-						utmLink: '',
-						imgSrc: '',
-						alt: 'product03_R',
+						l: {
+							id: 'pdl_3',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/3dff00/000?text=MEN-left',
+							alt: 'product03_L',
+						},
+						r: {
+							id: 'pdr_3',
+							link: '',
+							utmLink: '',
+							imgSrc: '',
+							defaultImg: 'https://fakeimg.pl/325x872/669d3d/000?text=MEN-right',
+							alt: 'product03_R',
+						},
 					},
 				],
 				footerIcon: {
@@ -672,7 +404,7 @@ var app = new Vue({
 					utmLink: '',
 					imgSrc: '',
 				},
-				productTwin: [
+				products: [
 					{
 						l :{
 							id: 'pdl_1',
@@ -824,7 +556,6 @@ var app = new Vue({
 				item.utmLink = item.link + UTMStr;
 			});
 
-
 			// 判斷是否有 banner
 			if(vm.EDMtemplate[index].banner){
 				vm.EDMtemplate[index].banner.utmLink = vm.EDMtemplate[index].banner.link + UTMStr;
@@ -834,42 +565,16 @@ var app = new Vue({
 			if(vm.EDMtemplate[index].button){
 				vm.EDMtemplate[index].button.utmLink = vm.EDMtemplate[index].button.link + UTMStr;
 			};
-			// pd 
-			// 要判斷有幾個單欄雙欄
 
-			if(vm.EDMtemplate[index].product){
-				const pd = vm.EDMtemplate[index].product;
+			if(vm.EDMtemplate[index].products){
+				const pd = vm.EDMtemplate[index].products;
 				pd.forEach((item) => {
-					item.utmLink = item.link + UTMStr;
-				})
-			};
-
-			if(vm.EDMtemplate[index].productS){
-				const pd = vm.EDMtemplate[index].productS;
-				pd.forEach((item) => {
-					item.utmLink = item.link + UTMStr;
-				})
-			};
-
-			if(vm.EDMtemplate[index].productL){
-				const pd = vm.EDMtemplate[index].productL;
-				pd.forEach((item) => {
-					item.utmLink = item.link + UTMStr;
-				})
-			};
-
-			if(vm.EDMtemplate[index].productR){
-				const pd = vm.EDMtemplate[index].productR;
-				pd.forEach((item) => {
-					item.utmLink = item.link + UTMStr;
-				})
-			};
-
-			if(vm.EDMtemplate[index].productTwin){
-				const pd = vm.EDMtemplate[index].productTwin;
-				pd.forEach((item) => {
-					item.l.utmLink = item.l.link + UTMStr;
-					item.r.utmLink = item.r.link + UTMStr;
+					if(item.l && item.r){
+						item.l.utmLink = item.l.link + UTMStr;
+						item.r.utmLink = item.r.link + UTMStr;
+					}else{
+						item.utmLink = item.link + UTMStr;
+					}
 				})
 			};
 			

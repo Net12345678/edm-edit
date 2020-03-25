@@ -91,7 +91,7 @@
               <!-- product -->
               <h2 class="h2 text-center">Product</h2>
               <!-- 雙欄 -->
-              <div class="form-group" v-for="(pd, index) in EDMtemplate[2].productTwin">
+              <div class="form-group" v-for="(pd, index) in EDMtemplate[2].products">
                 <h3 class="my-3">Product {{ index+1 }} 雙欄</h3>
                 <div class="border c-border-double p-3 rounded">
                   <label class="mb-2" for="product_link">左欄 <span class="l-aside_label_link">連結</span> /<span
@@ -193,7 +193,7 @@
                       <td class="edmTable_td">
                         <a :href="EDMtemplate[2].logo.utmLink || EDMtemplate[2].logo.link" target="_blank">
                           <!-- <img style="vertical-align:0; display:block;" src="uni-logo.jpg" alt="logo" width="650"> -->
-                          <img id="edmTable_logo" alt="logo" :src="EDMtemplate[2].logo.imgSrc || DefaultLayout[2].logo.imgSrc"
+                          <img id="edmTable_logo" alt="logo" :src="EDMtemplate[2].logo.imgSrc || layout.logo.imgSrc"
                             style="vertical-align:0; display:block;" width="650">
                         </a>
                       </td>
@@ -205,7 +205,7 @@
                             <tr>
                               <td class="edmTable_td" v-for="(menu, index) in EDMtemplate[2].menu">
                                 <a :href="menu.utmLink || menu.link" target="_blank">
-                                  <img :id="`edmTable_${menu.id}`" :src="EDMtemplate[2].menu[index].imgSrc || DefaultLayout[2].menu[index].imgSrc"
+                                  <img :id="`edmTable_${menu.id}`" :src="EDMtemplate[2].menu[index].imgSrc || layout.menu[index].imgSrc"
                                     :alt="menu.alt" style="vertical-align:0; display:block;" :width="menu.width"
                                     border="0">
                                 </a>
@@ -221,7 +221,7 @@
                 <!-- 雙欄-->
                 <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
                   <tbody>
-                    <tr v-for="(pd, index) in EDMtemplate[2].productTwin">
+                    <tr v-for="(pd, index) in EDMtemplate[2].products">
                       <td>
                         <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tbody>
@@ -257,14 +257,14 @@
                     <td class="edmTable_td" v-for="(footerIcon, key) in EDMtemplate[2].footerIcon">
                       <a :href="footerIcon.link">
                         <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="650"> -->
-                        <img :id="`edmTable_${footerIcon.id}`" :src="footerIcon.imgSrc || DefaultLayout[2].footer[key].imgSrc" :alt="footerIcon.alt"
+                        <img :id="`edmTable_${footerIcon.id}`" :src="footerIcon.imgSrc || layout.footer[key].imgSrc" :alt="footerIcon.alt"
                           style="vertical-align:0; display:block;" width="60">
                       </a>
                     </td>
                     <td class="edmTable_td">
                       <!-- <img style="vertical-align:0; display:block;" src="footer_facebook.jpg" alt="footer_title" width="650"> -->
                       <img id="edmTable_footer_contant" alt="footer_content"
-                        :src="EDMtemplate[2].footerContent.imgSrc || DefaultLayout[2].footerContent.imgSrc"
+                        :src="EDMtemplate[2].footerContent.imgSrc || layout.footerContent.imgSrc"
                         style="vertical-align:0; display:block;" width="470">
                     </td>
                   </tr>
