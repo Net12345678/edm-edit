@@ -749,9 +749,30 @@ var app = new Vue({
 		closeNav() {
 
 		},
+
 		addEdmData(data,i){
-			var vm = this;
-			var edm = vm.EDMtemplate[i];
+			const vm = this;
+			const edm = vm.EDMtemplate[i];
+			if(edm.product[0].link){
+				edm.logo.link = '';
+				edm.logo.imgSrc = '';
+				edm.menu.forEach((item)=>{
+					item.link = '';
+					item.imgSrc = '';
+				})
+				edm.footerIcon.fb.link = '';
+				edm.footerIcon.ig.link = '';
+				edm.footerIcon.line.link = '';
+				edm.footerIcon.fb.imgSrc = '';
+				edm.footerIcon.ig.imgSrc = '';
+				edm.footerIcon.line.imgSrc = '';
+				edm.footerContent.imgSrc = '';
+
+				edm.product.forEach((item)=>{
+					item.link = '';
+					item.imgSrc = '';
+				})
+			}
 			edm.logo.link = data.logoLink;
 			edm.logo.imgSrc = data.logoImg;
 			edm.menu.forEach((item,key)=>{
@@ -774,6 +795,7 @@ var app = new Vue({
 				item.link = data[link];
 				item.imgSrc = data[img];
 			})
+			
 		},
 		importData(e,i) {
 			var vm = this;
@@ -807,7 +829,7 @@ var app = new Vue({
 			};
 			// 以二進位制方式開啟檔案
 			fileReader.readAsBinaryString(files[0]);
-		}
+		},
 	},
 	computed: {
 		toNumber() {
