@@ -795,7 +795,6 @@ var app = new Vue({
 				item.link = data[link];
 				item.imgSrc = data[img];
 			})
-			
 		},
 		importData(e,i) {
 			var vm = this;
