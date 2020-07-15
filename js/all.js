@@ -714,6 +714,11 @@ var app = new Vue({
 		],
 		oupputData: '',
 		isOpenNav: false,
+		utm: {
+			source: '',
+			medium: '',
+			campaign: '',
+		},
 	},
 	methods: {
 		outputEDMHtml() {
