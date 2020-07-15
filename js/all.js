@@ -749,11 +749,91 @@ var app = new Vue({
 			})
 		},
 		openNav() {
-			
+
 		},
 		closeNav() {
 
-		}
+		},
+
+		addEdmData(data,i){
+			const vm = this;
+			const edm = vm.EDMtemplate[i];
+			if(edm.product[0].link){
+				edm.logo.link = '';
+				edm.logo.imgSrc = '';
+				edm.menu.forEach((item)=>{
+					item.link = '';
+					item.imgSrc = '';
+				})
+				edm.footerIcon.fb.link = '';
+				edm.footerIcon.ig.link = '';
+				edm.footerIcon.line.link = '';
+				edm.footerIcon.fb.imgSrc = '';
+				edm.footerIcon.ig.imgSrc = '';
+				edm.footerIcon.line.imgSrc = '';
+				edm.footerContent.imgSrc = '';
+
+				edm.product.forEach((item)=>{
+					item.link = '';
+					item.imgSrc = '';
+				})
+			}
+			edm.logo.link = data.logoLink;
+			edm.logo.imgSrc = data.logoImg;
+			edm.menu.forEach((item,key)=>{
+				const link = 'menuLink_' + (key+1);
+				const img = 'menuImg_' + (key+1);
+				item.link = data[link];
+				item.imgSrc = data[img];
+			})
+			edm.footerIcon.fb.link = data.fbLink;
+			edm.footerIcon.ig.link = data.igLink;
+			edm.footerIcon.line.link = data.lineLink;
+			edm.footerIcon.fb.imgSrc = data.fbImg;
+			edm.footerIcon.ig.imgSrc = data.igImg;
+			edm.footerIcon.line.imgSrc = data.lineImg;
+			edm.footerContent.imgSrc = data.mailImg;
+
+			edm.product.forEach((item,key)=>{
+				const link = 'pdLink_' + (key+1);
+				const img = 'pdImg_' + (key+1);
+				item.link = data[link];
+				item.imgSrc = data[img];
+			})
+		},
+		importData(e,i) {
+			var vm = this;
+			var files = e.target.files;
+			var fileReader = new FileReader();
+			fileReader.onload = function (ev) {
+				try {
+					var data = ev.target.result
+					var workbook = XLSX.read(data, {
+						type: 'binary'
+					}) // 以二進位制流方式讀取得到整份excel表格物件
+					var persons = []; // 儲存獲取到的資料
+				} catch (e) {
+					console.log('檔案型別不正確');
+					return;
+				}
+				// 表格的表格範圍，可用於判斷表頭是否數量是否正確
+				var fromTo = '';
+				// 遍歷每張表讀取
+				for (var sheet in workbook.Sheets) {
+					if (workbook.Sheets.hasOwnProperty(sheet)) {
+						fromTo = workbook.Sheets[sheet]['!ref'];
+						console.log(fromTo);
+						persons = persons.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
+						// break; // 如果只取第一張表，就取消註釋這行
+					}
+				}
+				//在控制檯打印出來表格中的資料
+				console.log(persons[0],i);
+				vm.addEdmData(persons[0],i);
+			};
+			// 以二進位制方式開啟檔案
+			fileReader.readAsBinaryString(files[0]);
+		},
 	},
 	computed: {
 		toNumber() {
