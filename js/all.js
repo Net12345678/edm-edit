@@ -829,7 +829,8 @@ var app = new Vue({
 				console.log(persons,i);
 				vm.addEdmData(persons,i);
 
-				//push utm data
+				//push excel utm data to object
+				vm.UTMData = [];
 				for(let i = 0; i < persons.length; i++){
 					let camIndex = (i + 1).toString();
 					vm.UTMData.push({'utm_source' : 'EDM', 'utm_medium': persons[i].utm_medium, 'utm_campaign': persons[i].utm_campaign + camIndex});
@@ -841,7 +842,8 @@ var app = new Vue({
 			fileReader.readAsBinaryString(files[0]);
 		},
 		CreateUTM(){
-			const vm = this;	
+			const vm = this;
+			vm.oupputUTMHTML = [];
 			let utmStr = '';
 			for(let index in vm.UTMData){
 				utmStr = `utm_source=${vm.UTMData[index].utm_source}&amp;utm_medium=${vm.UTMData[index].utm_medium}&amp;utm_campaign=${vm.UTMData[index].utm_campaign}`
