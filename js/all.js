@@ -712,18 +712,16 @@ var app = new Vue({
 				}
 			},
 		],
-		oupputData: '',
+		oupputData: '',		
 		isOpenNav: false,
-		UTMData: {
-			source: '',
-			medium: '',
-			campaign: '',
-		}
+		UTMData: [],
+		oupputUTMHTML: []	
 	},	
 	methods: {
 		outputEDMHtml() {
 			const preview = document.getElementById('preview');
 			this.oupputData = preview.firstChild.outerHTML;
+			this.CreateUTM();
 		},
 		focusImg(id, i) {
 			const edmTable_td = document.querySelectorAll('.edmTable_td');
@@ -778,27 +776,27 @@ var app = new Vue({
 					item.imgSrc = '';
 				})
 			}
-			edm.logo.link = data.logoLink;
-			edm.logo.imgSrc = data.logoImg;
+			edm.logo.link = data[0].logoLink + '?utm';
+			edm.logo.imgSrc = data[0].logoImg;
 			edm.menu.forEach((item,key)=>{
 				const link = 'menuLink_' + (key+1);
 				const img = 'menuImg_' + (key+1);
-				item.link = data[link];
-				item.imgSrc = data[img];
+				item.link = data[0][link] + '?utm';
+				item.imgSrc = data[0][img];
 			})
-			edm.footerIcon.fb.link = data.fbLink;
-			edm.footerIcon.ig.link = data.igLink;
-			edm.footerIcon.line.link = data.lineLink;
-			edm.footerIcon.fb.imgSrc = data.fbImg;
-			edm.footerIcon.ig.imgSrc = data.igImg;
-			edm.footerIcon.line.imgSrc = data.lineImg;
-			edm.footerContent.imgSrc = data.mailImg;
+			edm.footerIcon.fb.link = data[0].fbLink;
+			edm.footerIcon.ig.link = data[0].igLink;
+			edm.footerIcon.line.link = data[0].lineLink;
+			edm.footerIcon.fb.imgSrc = data[0].fbImg;
+			edm.footerIcon.ig.imgSrc = data[0].igImg;
+			edm.footerIcon.line.imgSrc = data[0].lineImg;
+			edm.footerContent.imgSrc = data[0].mailImg;
 
 			edm.product.forEach((item,key)=>{
 				const link = 'pdLink_' + (key+1);
 				const img = 'pdImg_' + (key+1);
-				item.link = data[link];
-				item.imgSrc = data[img];
+				item.link = data[0][link] + '?utm';
+				item.imgSrc = data[0][img];
 			})
 		},
 		importData(e,i) {
@@ -828,12 +826,31 @@ var app = new Vue({
 					}
 				}
 				//在控制檯打印出來表格中的資料
-				console.log(persons[0],i);
-				vm.addEdmData(persons[0],i);
+				console.log(persons,i);
+				vm.addEdmData(persons,i);
+
+				//push utm data
+				for(let i = 0; i < persons.length; i++){
+					let camIndex = (i + 1).toString();
+					vm.UTMData.push({'utm_source' : 'EDM', 'utm_medium': persons[i].utm_medium, 'utm_campaign': persons[i].utm_campaign + camIndex});
+				}
+				console.log(vm.UTMData);
+
 			};
 			// 以二進位制方式開啟檔案
 			fileReader.readAsBinaryString(files[0]);
 		},
+		CreateUTM(){
+			const vm = this;	
+			let utmStr = '';
+			for(let index in vm.UTMData){
+				utmStr = `utm_source=${vm.UTMData[index].utm_source}&amp;utm_medium=${vm.UTMData[index].utm_medium}&amp;utm_campaign=${vm.UTMData[index].utm_campaign}`
+				htmlStr = vm.oupputData.replace(/utm/g, utmStr);
+				vm.oupputUTMHTML.push(htmlStr);
+				// console.log(vm.UTMData[index].utm_campaign);
+			}	
+			console.log(vm.oupputUTMHTML);		
+		}
 	},
 	computed: {
 		toNumber() {
