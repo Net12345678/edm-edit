@@ -717,6 +717,12 @@ var app = new Vue({
 		UTMData: [],
 		oupputUTMHTML: []	
 	},	
+		utm: {
+			source: '',
+			medium: '',
+			campaign: '',
+		},
+	
 	methods: {
 		outputEDMHtml() {
 			const preview = document.getElementById('preview');
