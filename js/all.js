@@ -786,7 +786,7 @@ var app = new Vue({
 					item.imgSrc = '';
 				})
 			}
-			edm.logo.link = data[0].logoLink + '?utm';
+			edm.logo.link = data[0].logoLink + '#utm';
 			edm.logo.imgSrc = data[0].logoImg;
 			edm.menu.forEach((item,key)=>{
 				const link = 'menuLink_' + (key+1);
