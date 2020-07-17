@@ -848,6 +848,7 @@ var app = new Vue({
 			//將output的HTML的連結加上utm參數
 			for(let index in vm.UTMData){
 				utmStr = `utm_source=${vm.UTMData[index].utm_source}&amp;utm_medium=${vm.UTMData[index].utm_medium}&amp;utm_campaign=${vm.UTMData[index].utm_campaign}`
+				//取代有utm的字串
 				htmlStr = vm.oupputData.replace(/utm/g, utmStr);
 				vm.oupputUTMHTML.push(htmlStr);
 				// console.log(vm.UTMData[index].utm_campaign);
