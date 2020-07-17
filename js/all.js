@@ -721,7 +721,7 @@ var app = new Vue({
 		outputEDMHtml() {
 			const preview = document.getElementById('preview');
 			this.oupputData = preview.firstChild.outerHTML;
-			this.CreateUTM();
+			this.CreateUTMHTML();
 		},
 		focusImg(id, i) {
 			const edmTable_td = document.querySelectorAll('.edmTable_td');
@@ -841,10 +841,11 @@ var app = new Vue({
 			// 以二進位制方式開啟檔案
 			fileReader.readAsBinaryString(files[0]);
 		},
-		CreateUTM(){
+		CreateUTMHTML(){
 			const vm = this;
 			vm.oupputUTMHTML = [];
 			let utmStr = '';
+			//將output的HTML的連結加上utm參數
 			for(let index in vm.UTMData){
 				utmStr = `utm_source=${vm.UTMData[index].utm_source}&amp;utm_medium=${vm.UTMData[index].utm_medium}&amp;utm_campaign=${vm.UTMData[index].utm_campaign}`
 				htmlStr = vm.oupputData.replace(/utm/g, utmStr);
