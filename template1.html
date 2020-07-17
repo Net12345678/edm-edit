@@ -151,8 +151,10 @@
             <a href="#" class="btn text-secondary px-0" data-target="#info" data-toggle="modal" type="button">
               <i class="fas fa-info-circle"></i>
             </a>
-            <a class="btn btn-link" href="https://drive.google.com/u/0/uc?id=1CBW97N4u_kzsB-9xffqqP66ywsFeuV6d&export=download">匯入範例檔案下載</a>
-            
+            <a class="btn btn-link" href="https://drive.google.com/u/0/uc?id=1zsxW-AJ0IF2TgfwKGsm_k3X_n8huraOI&export=download">匯入範例檔案下載</a>
+            <button class="btn btn-dark" type="button" @click="downloadHtml">
+              下載
+            </button>
             <button class="btn btn-dark" data-target="#createEDMCode" data-toggle="modal" type="button" @click="outputEDMHtml">
               程式碼製作
             </button>
@@ -189,7 +191,16 @@
                 </div>
                 <div class="modal-body">
                   <h5 class="h5"># <span class="text-danger">紅字</span>的已經預設寫在 EXCEL 裡，其他資料填完直接匯入即可。</h5>  
-                  <h4 class="h4">Header</h4>
+                  <h4 class="h4">UTM</h4>
+                  <ul class="list-group">
+                    <li class="list-group-item border-0">Source: utm_source</li>
+                    <li class="list-group-item border-0">Medium: utm_medium</li>
+                    <li class="list-group-item border-0">Campaign: utm_campaign</li>
+                  </ul>
+                  <h6 class="h6"># 其中<span class="text-danger"> Campaign </span>的部分可以在 Excel 中建立多個</h6>  
+                  <div class="m-3"><img src="img/utm範例圖.png" alt=""></div>
+                  
+                  <h3 class="h3">Header</h3>
                   <ul class="list-group">
                     <li class="list-group-item border-0">logo 連結: logoLink</li>
                     <li class="list-group-item border-0 text-danger">logo 圖片: logoImg</li>
@@ -292,11 +303,14 @@
       
     </div>
   </div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  
   <script src="js/all.js"></script>
 </body> 
 </html>

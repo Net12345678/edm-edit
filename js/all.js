@@ -727,7 +727,11 @@ var app = new Vue({
 		outputEDMHtml() {
 			const preview = document.getElementById('preview');
 			this.oupputData = preview.firstChild.outerHTML;
-			this.CreateUTMHTML();
+		},
+		downloadHtml(){
+			let vm = this; 
+			vm.outputEDMHtml()
+			vm.CreateUTMHTML();
 		},
 		focusImg(id, i) {
 			const edmTable_td = document.querySelectorAll('.edmTable_td');
@@ -856,10 +860,29 @@ var app = new Vue({
 				utmStr = `utm_source=${vm.UTMData[index].utm_source}&amp;utm_medium=${vm.UTMData[index].utm_medium}&amp;utm_campaign=${vm.UTMData[index].utm_campaign}`
 				//取代有utm的字串
 				htmlStr = vm.oupputData.replace(/utm/g, utmStr);
-				vm.oupputUTMHTML.push(htmlStr);
-				// console.log(vm.UTMData[index].utm_campaign);
+				
+				vm.oupputUTMHTML.push({
+					name: vm.UTMData[index].utm_campaign,
+					content: htmlStr,
+				});
 			}	
-			console.log(vm.oupputUTMHTML);		
+			console.log(vm.oupputUTMHTML);	
+			vm.downEdmFile(vm.oupputUTMHTML);
+		},
+		downEdmFile(edmData){
+			let zip = new JSZip();
+			let EDM = zip.folder("EDM");
+			edmData.forEach((item)=>{
+				let name = item.name;
+				let content = item.content;
+				EDM.file(name + ".html", content);
+			})
+
+			zip.generateAsync({type:"blob"})
+			.then(function(content) {
+					// see FileSaver.js
+					saveAs(content, "EDM.zip");
+			});
 		}
 	},
 	computed: {
