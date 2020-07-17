@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 
 var app = new Vue({
@@ -867,4 +865,3 @@ var app = new Vue({
 
 });
 
->>>>>>> feature3
