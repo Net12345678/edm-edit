@@ -805,7 +805,7 @@ var app = new Vue({
 			edm.product.forEach((item,key)=>{
 				const link = 'pdLink_' + (key+1);
 				const img = 'pdImg_' + (key+1);
-				item.link = data[0][link] + '#utm';
+				item.link = data[0][link] + `#utm${key + 1}`;
 				item.imgSrc = data[0][img];
 			})
 		},
@@ -841,9 +841,9 @@ var app = new Vue({
 
 				//push excel utm data to object
 				vm.UTMData = [];
-				for(let i = 0; i < persons.length; i++){
-					let camIndex = (i + 1).toString();
-					vm.UTMData.push({'utm_source' : 'EDM', 'utm_medium': persons[i].utm_medium, 'utm_campaign': persons[i].utm_campaign + camIndex});
+				for(let i = 0; i < persons.length; i++){				
+						// let camIndex = (i + 1).toString();
+						vm.UTMData.push({'utm_source' : 'EDM', 'utm_medium': persons[i].utm_medium, 'utm_campaign': persons[i].utm_campaign});							
 				}
 				console.log(vm.UTMData);
 
@@ -860,7 +860,7 @@ var app = new Vue({
 				utmStr = `utm_source=${vm.UTMData[index].utm_source}&amp;utm_medium=${vm.UTMData[index].utm_medium}&amp;utm_campaign=${vm.UTMData[index].utm_campaign}`
 				//取代有utm的字串
 				htmlStr = vm.oupputData.replace(/utm/g, utmStr);
-				
+				//將輸出之HTML碼存入物件中
 				vm.oupputUTMHTML.push({
 					name: vm.UTMData[index].utm_campaign,
 					content: htmlStr,
