@@ -805,7 +805,7 @@ var app = new Vue({
 			edm.product.forEach((item,key)=>{
 				const link = 'pdLink_' + (key+1);
 				const img = 'pdImg_' + (key+1);
-				item.link = data[0][link] + `#utm${key + 1}`;
+				item.link = data[0][link] + `#utm_${key + 1}`;
 				item.imgSrc = data[0][img];
 			})
 		},
