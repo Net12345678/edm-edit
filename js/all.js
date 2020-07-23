@@ -836,7 +836,6 @@ var app = new Vue({
 					}
 				}
 				//在控制檯打印出來表格中的資料
-				console.log(persons,i);
 				vm.addEdmData(persons,i);
 
 				//push excel utm data to object
@@ -845,7 +844,6 @@ var app = new Vue({
 						// let camIndex = (i + 1).toString();
 						vm.UTMData.push({'utm_source' : 'EDM', 'utm_medium': persons[i].utm_medium, 'utm_campaign': persons[i].utm_campaign});							
 				}
-				console.log(vm.UTMData);
 
 			};
 			// 以二進位制方式開啟檔案
@@ -866,10 +864,13 @@ var app = new Vue({
 					content: htmlStr,
 				});
 			}	
-			console.log(vm.oupputUTMHTML);	
 			vm.downEdmFile(vm.oupputUTMHTML);
 		},
 		downEdmFile(edmData){
+			if(edmData.length === 0){
+				alert('請先匯入資料');
+				return;
+			}
 			let zip = new JSZip();
 			let EDM = zip.folder("EDM");
 			edmData.forEach((item)=>{
