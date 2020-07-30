@@ -143,6 +143,12 @@
           <!-- Button trigger modal -->
           
           <div class="text-right mb-3" v-if="EDMtemplate">
+            <hr>
+            <div class="custom-control custom-switch text-center">
+              <input  type="checkbox" v-model="camSwitch" class="custom-control-input" id="customSwitch1">
+              <label class="custom-control-label" for="customSwitch1">追蹤碼帶Number</label>
+            </div>
+            <hr>
             
             <div class="form-group">
               <input type="file" class="form-control-file" type="file" @change="importData($event,0)" id="excel-file">

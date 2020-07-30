@@ -715,13 +715,15 @@ var app = new Vue({
 		oupputData: '',		
 		isOpenNav: false,
 		UTMData: [],
-		oupputUTMHTML: []	
-	},	
+		oupputUTMHTML: [],
 		utm: {
 			source: '',
 			medium: '',
 			campaign: '',
 		},
+		camSwitch: true	
+	},	
+		
 	
 	methods: {
 		outputEDMHtml() {
@@ -766,6 +768,7 @@ var app = new Vue({
 		addEdmData(data,i){
 			const vm = this;
 			const edm = vm.EDMtemplate[i];
+			let camNum = '';
 			if(edm.product[0].link){
 				edm.logo.link = '';
 				edm.logo.imgSrc = '';
@@ -803,9 +806,11 @@ var app = new Vue({
 			edm.footerContent.imgSrc = data[0].mailImg;
 
 			edm.product.forEach((item,key)=>{
+				if(vm.camSwitch)
+					camNum =`_${String(key + 1)}`;
 				const link = 'pdLink_' + (key+1);
 				const img = 'pdImg_' + (key+1);
-				item.link = data[0][link] + `#utm_${key + 1}`;
+				item.link = data[0][link] + `#utm${camNum}`;
 				item.imgSrc = data[0][img];
 			})
 		},
