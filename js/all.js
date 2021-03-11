@@ -464,6 +464,7 @@ var app = new Vue({
 				},
 				footerContent: {
 					id: 'footerContent',
+					link: '',
 					imgSrc: '',
 				}
 			},
@@ -800,6 +801,7 @@ var app = new Vue({
 			edm.footerIcon.fb.link = data[0].fbLink;
 			edm.footerIcon.ig.link = data[0].igLink;
 			edm.footerIcon.line.link = data[0].lineLink;
+			edm.footerContent.link = data[0].mailLink;
 			edm.footerIcon.fb.imgSrc = data[0].fbImg;
 			edm.footerIcon.ig.imgSrc = data[0].igImg;
 			edm.footerIcon.line.imgSrc = data[0].lineImg;
