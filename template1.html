@@ -17,19 +17,26 @@
           <button type="button" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <ul class="nav flex-column text-center">
+          <ul class="nav flex-column text-center">            
             <li class="nav-item">
               <a class="nav-link h5" href="index.html">首頁</a>
+              <hr>
             </li>
             <li class="nav-item">
+              <img src="img/logo_nuv_aside.png" alt="logo_nuv_aside" width="80px">
+              <a class="nav-link h5" href="template1.html">版一</a>
+              <hr>
+            </li>
+            <li class="nav-item">
+              <img src="img/logo_net.png" alt="logo_net" width="40px">
               <a class="nav-link h5" href="template1.html">版一</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link h5" href="template2.html">版二</a>
             </li>
             <li class="nav-item">
               <a class="nav-link h5" href="template3.html">版三</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -307,8 +314,8 @@
                   </tr>
                 </tbody>
               </table>
-             <!-- footer -->
-             <table width="650" align="center" cellpadding="0" cellspacing="0">
+            <!-- footer -->
+            <table width="650" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td class="edmTable_td" v-for="(footerIcon, key) in EDMtemplate[0].footerIcon"> 
                   <a :href="footerIcon.link">
