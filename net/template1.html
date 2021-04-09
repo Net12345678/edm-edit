@@ -120,7 +120,7 @@
             <hr> 
             <!-- product -->
             <h2 class="h2 text-center">Product</h2>
-            <div class="form-group" v-for="(product, index) in EDMtemplate[0].product">
+            <div class="form-group" v-for="(product, index) in EDMtemplate[0].product.slice(0,6)">
               <label class="mb-2" for="product_link">Product{{index + 1}}<span class="l-aside_label_link">連結</span> /<span class="l-aside_label_img">圖片</span></label>
               <div class="row">
                 <div class="col">
@@ -302,7 +302,7 @@
               <!-- men 2 單欄-->
               <table width="650" align="center" cellpadding="0" cellspacing="0" border="0">
                 <tbody>                  
-                  <tr v-for="(product, index) in EDMtemplate[0].product">
+                  <tr v-for="(product, index) in EDMtemplate[0].product.slice(0,6)">
                     <td class="edmTable_td">
                       <a :href="product.link" target="_blank">
                         <!-- <img style="vertical-align:0; display:block;" src="men-pants1.jpg" alt="men-pants" width="650"> -->
