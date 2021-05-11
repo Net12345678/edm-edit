@@ -770,6 +770,7 @@ var app = new Vue({
 			const vm = this;
 			const edm = vm.EDMtemplate[i];
 			let camNum = '';
+
 			if(edm.product[0].link){
 				edm.logo.link = '';
 				edm.logo.imgSrc = '';
@@ -789,13 +790,20 @@ var app = new Vue({
 					item.link = '';
 					item.imgSrc = '';
 				})
-			}
-			edm.logo.link = data[0].logoLink + '#utm';
+			}			
+
+			if(data[0].logoLink.indexOf('?') != -1)
+				edm.logo.link = data[0].logoLink + '&utm';
+			else
+				edm.logo.link = data[0].logoLink + '?utm';
 			edm.logo.imgSrc = data[0].logoImg;
 			edm.menu.forEach((item,key)=>{
 				const link = 'menuLink_' + (key+1);
 				const img = 'menuImg_' + (key+1);
-				item.link = data[0][link] + '#utm';
+				if(data[0][link].indexOf('?') != -1)
+					item.link = data[0][link] + '&utm';
+				else
+					item.link = data[0][link] + '?utm';
 				item.imgSrc = data[0][img];
 			})
 			edm.footerIcon.fb.link = data[0].fbLink;
@@ -812,7 +820,13 @@ var app = new Vue({
 					camNum =`_${key + 1}`;
 				const link = 'pdLink_' + (key+1);
 				const img = 'pdImg_' + (key+1);
-				item.link = data[0][link] + `#utm${camNum}`;
+				if(data[0][link]){
+					if(data[0][link].indexOf('?') != -1)
+						item.link = data[0][link] + `&utm${camNum}`;
+					else
+						item.link = data[0][link] + `?utm${camNum}`;
+				}
+				
 				item.imgSrc = data[0][img];
 			})
 		},
