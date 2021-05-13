@@ -791,19 +791,22 @@ var app = new Vue({
 					item.imgSrc = '';
 				})
 			}			
-
-			if(data[0].logoLink.indexOf('?') != -1)
-				edm.logo.link = data[0].logoLink + '&utm';
-			else
-				edm.logo.link = data[0].logoLink + '?utm';
+			if(data[0].logoLink){
+				if(data[0].logoLink.indexOf('?') != -1)
+					edm.logo.link = data[0].logoLink + '&utm';
+				else
+					edm.logo.link = data[0].logoLink + '?utm';
+			}			
 			edm.logo.imgSrc = data[0].logoImg;
 			edm.menu.forEach((item,key)=>{
 				const link = 'menuLink_' + (key+1);
 				const img = 'menuImg_' + (key+1);
-				if(data[0][link].indexOf('?') != -1)
+				if(data[0][link]){
+					if(data[0][link].indexOf('?') != -1)
 					item.link = data[0][link] + '&utm';
-				else
-					item.link = data[0][link] + '?utm';
+					else
+						item.link = data[0][link] + '?utm';
+				}				
 				item.imgSrc = data[0][img];
 			})
 			edm.footerIcon.fb.link = data[0].fbLink;
